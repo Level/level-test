@@ -6,6 +6,7 @@ var path = require('path')
 module.exports = function () {
 
   return function (name, opts, cb) {
+    name = name || 'db_' + Date.now()
     var dir = path.join(os.tmpdir(), name)
     rimraf.sync(dir)
     return level(dir, opts, cb)
