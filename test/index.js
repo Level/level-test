@@ -16,3 +16,11 @@ test('simple', function (t) {
   })
 })
 
+
+test('default name', function (t) {
+  var db = level()
+  db.put('foo', 'bar', function (err) {
+    t.notOk(err)
+    t.end()
+  })
+})
