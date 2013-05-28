@@ -1,6 +1,6 @@
 {
   "name": "level-test",
-  "description": "",
+  "description": "get a clean levelup instance for testing.",
   "version": "1.0.0",
   "homepage": "https://github.com/dominictarr/level-test",
   "repository": {
@@ -8,7 +8,6 @@
     "url": "git://github.com/dominictarr/level-test.git"
   },
   "dependencies": {
-    "tap": "~0.4.3",
     "level": "~0.9.0",
     "level-js": "~1.0.3",
     "rimraf": "~2.1.4"
