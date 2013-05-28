@@ -8,12 +8,17 @@
     "url": "git://github.com/dominictarr/level-test.git"
   },
   "dependencies": {
+    "tap": "~0.4.3",
+    "level": "~0.9.0",
+    "level-js": "~1.0.3",
+    "rimraf": "~2.1.4"
   },
   "devDependencies": {
+    "tape": "~1.0.2"
   },
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
   },
   "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
-  "license": "MIT"  
+  "license": "MIT"
 }
