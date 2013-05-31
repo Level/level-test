@@ -1,7 +1,7 @@
 {
   "name": "level-test",
   "description": "get a clean levelup instance for testing.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "homepage": "https://github.com/dominictarr/level-test",
   "repository": {
     "type": "git",
