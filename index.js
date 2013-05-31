@@ -9,12 +9,12 @@ function tmpdir () {
 
 module.exports = function (opts) {
   opts = opts || {}
-  return function (name, opts, cb) {
+  return function (name, _opts, cb) {
     name = name || 'db_' + Date.now()
     var dir = path.join(tmpdir(), name)
     if(opts.clean !== false)
       rimraf.sync(dir)
-    return level(dir, opts, cb)
+    return level(dir, _opts, cb)
   }
 
 }
