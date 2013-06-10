@@ -15,7 +15,7 @@ Create a fresh db, with out refering to any fs or dom specifics,
 so that the same test can be used in the server or the browser!
 ``` js
 
-var level = require('level-test')
+var level = require('level-test')()
 
 var db = level('foo', {encoding: 'json'}) 
 ```
