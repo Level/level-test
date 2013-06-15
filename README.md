@@ -20,6 +20,15 @@ var level = require('level-test')()
 var db = level('foo', {encoding: 'json'}) 
 ```
 
+## In Memory Example
+
+``` js
+
+var level = require('level-test')( { mem: true })
+
+var db = level('foo', {encoding: 'json'}) 
+```
+
 use whatever test framework you like!
 
 ## TODO

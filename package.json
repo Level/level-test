@@ -8,9 +8,11 @@
     "url": "git://github.com/dominictarr/level-test.git"
   },
   "dependencies": {
-    "level": "~0.9.0",
     "level-js": "~1.0.3",
-    "rimraf": "~2.1.4"
+    "rimraf": "~2.1.4",
+    "levelup": "~0.10.0",
+    "leveldown": "~0.6.1",
+    "memdown": "~0.2.0"
   },
   "devDependencies": {
     "tape": "~1.0.2"
