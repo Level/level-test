@@ -1,4 +1,4 @@
-var level = require('level')
+var levelup = require('levelup')
 var rimraf = require('rimraf')
 var os = require('os')
 var path = require('path')
@@ -14,7 +14,8 @@ module.exports = function (opts) {
     var dir = path.join(tmpdir(), name)
     if(opts.clean !== false)
       rimraf.sync(dir)
-    return level(dir, _opts, cb)
+
+    return levelup(dir, _opts, cb);
   }
 
 }
