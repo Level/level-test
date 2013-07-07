@@ -14,6 +14,10 @@
     "leveldown": "~0.6.1",
     "memdown": "~0.2.0"
   },
+  "browser": {
+    "os": false,
+    "rimraf": false
+  },
   "devDependencies": {
     "tape": "~1.0.2"
   },
