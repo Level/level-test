@@ -13,7 +13,7 @@
     "levelup": "~0.10.0",
     "leveldown": "~0.6.1",
     "memdown": "~0.2.0",
-    "tmpdir": "~1.0.0"
+    "osenv": "0.0.3"
   },
   "devDependencies": {
     "tape": "~1.0.2"

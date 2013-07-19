@@ -1,9 +1,8 @@
 var levelup = require('levelup')
 var Memdown = require('memdown') 
 var rimraf = require('rimraf')
-var tmpdir = require('tmpdir')
+var tmpdir = require('osenv').tmpdir()
 var path = require('path')
-
 function disk (opts) {
   return function (name, _opts, cb) {
     name = name || 'db_' + Date.now()
