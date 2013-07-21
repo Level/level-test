@@ -10,7 +10,7 @@
   "dependencies": {
     "level-js": "~1.0.3",
     "rimraf": "~2.1.4",
-    "levelup": "~0.10.0",
+    "levelup": "~0.11.0",
     "leveldown": "~0.6.1",
     "memdown": "~0.2.0"
   },
