@@ -32,6 +32,6 @@
       "opera/12..latest",
       "safari/5.1..latest"
     ],
-    "files": "test/browser.js"
+    "files": "test/*.js"
   }
 }
