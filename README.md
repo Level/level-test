@@ -33,8 +33,7 @@ use whatever test framework you like!
 
 ## TODO
 
-configure leveldb settings via command line options/enviroment vars,
-and make a browser implementation.
+configure leveldb settings via command line options/enviroment vars.
 
 
 ## License
