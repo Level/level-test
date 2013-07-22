@@ -6,8 +6,12 @@ function browser (opts) {
   return function (name, _opts, cb) {
     name = name || 'db_' + Date.now()
     _opts = _opts || {}
-    _opts.db = function (l) { return new Leveljs(l) }
-    return levelup(name, _opts, cb)
+    var ljs
+    _opts.db = function (l) { return ljs = new Leveljs(l) }
+    var db = levelup(name, _opts, cb)
+    if (opts.clean !== false)
+      ljs.idb.deleteDatabase()
+    return db
   }
 }
 
