@@ -1,4 +1,4 @@
-var levelup = require('levelup')
+var levelup = require('level')
 var Memdown = require('memdown') 
 var rimraf = require('rimraf')
 var tmpdir = require('osenv').tmpdir()
