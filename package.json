@@ -8,14 +8,14 @@
     "url": "git://github.com/dominictarr/level-test.git"
   },
   "dependencies": {
-    "level-js": "~1.0.3",
-    "rimraf": "~2.1.4",
+    "level-js": "~1.0.8",
+    "rimraf": "~2.2.2",
     "osenv": "0.0.3",
-    "level": ">=0.12 <1",
-    "memdown": "~0.2.0"
+    "level": ">=0.17",
+    "memdown": "~0.5.1"
   },
   "devDependencies": {
-    "tape": "~1.0.2"
+    "tape": "~2.1.0"
   },
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
