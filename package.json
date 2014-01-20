@@ -11,8 +11,9 @@
     "level-js": "~1.0.8",
     "rimraf": "~2.2.2",
     "osenv": "0.0.3",
-    "level": ">=0.17",
-    "memdown": "~0.5.1"
+    "memdown": "~0.5.1",
+    "levelup": "~0.18.2",
+    "leveldown": "~0.10.2"
   },
   "devDependencies": {
     "tape": "~2.1.0"
