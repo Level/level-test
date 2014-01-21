@@ -5,8 +5,8 @@ inject different level implementations (browser, leveldb, etc) into your tests.
 [![travis](https://travis-ci.org/dominictarr/level-test.png?branch=master)
 ](https://travis-ci.org/dominictarr/level-test)
 
-[![testling](http://ci.testling.com/dominictarr/level-test.png)
-](http://ci.testling.com/dominictarr/level-test)
+[![testling](https://ci.testling.com/dominictarr/level-test.png)
+](https://ci.testling.com/dominictarr/level-test)
 
 
 ## Example
