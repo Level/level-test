@@ -9,14 +9,15 @@
   },
   "dependencies": {
     "level-js": "~1.0.8",
-    "rimraf": "~2.2.2",
+    "rimraf": "~2.2.6",
     "osenv": "0.0.3",
-    "memdown": "~0.5.1",
+    "memdown": "~0.6.0",
     "levelup": "~0.18.2",
-    "leveldown": "~0.10.2"
+    "leveldown": "~0.10.2",
+    "xtend": "~2.1.2"
   },
   "devDependencies": {
-    "tape": "~2.1.0"
+    "tape": "~2.4.0"
   },
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
