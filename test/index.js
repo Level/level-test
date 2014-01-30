@@ -24,3 +24,18 @@ test('default name', function (t) {
     t.end()
   })
 })
+
+test('options (valueEncoding: json)', function (t) {
+  var db = level('level-test2', {valueEncoding: 'json'})
+  var key = ''+Math.random()
+  var value = {test_key: '' + new Date()}
+
+  db.put(key, value, function (err) {
+    t.notOk(err)
+
+    db.get(key, function (err, _value) {
+      t.deepEqual(_value, value)
+      t.end()
+    })
+  })
+})
