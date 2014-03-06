@@ -31,6 +31,16 @@ var db = level('foo', {encoding: 'json'})
 
 use whatever test framework you like!
 
+## options
+currently supported options:
+
+``` js
+level(name, {
+  clean: false //do not delete database (defaults to true)
+})
+
+```
+
 ## TODO
 
 configure leveldb settings via command line options/enviroment vars.
