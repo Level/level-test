@@ -10,7 +10,7 @@ function disk (opts) {
     _opts = xtend(opts, _opts)
     name = name || 'db_' + Date.now()
     var dir = path.join(tmpdir, name)
-    if(opts.clean !== false)
+    if(_opts.clean !== false)
       rimraf.sync(dir)
     _opts.db = leveldown
     return levelup(dir, _opts, cb)
