@@ -13,8 +13,10 @@
     "osenv": "0.0.3",
     "memdown": "~0.6.0",
     "levelup": "~0.18.2",
-    "leveldown": "~0.10.2",
     "xtend": "~2.1.2"
+  },
+  "optionalDependencies": {
+    "leveldown": "~0.10.2"
   },
   "devDependencies": {
     "tape": "~2.4.0"
