@@ -1,6 +1,7 @@
 var levelup = require('levelup')
-var Memdown = require('memdown') 
+var Memdown = require('memdown')
 var rimraf = require('rimraf')
+var mkdirp = require('mkdirp')
 var tmpdir = require('osenv').tmpdir()
 var path = require('path')
 var xtend = require('xtend')
@@ -18,6 +19,7 @@ function disk (opts) {
   return function (name, _opts, cb) {
     _opts = xtend(opts, _opts)
     name = name || 'db_' + Date.now()
+    mkdirp.sync(tmpdir)
     var dir = path.join(tmpdir, name)
     if(_opts.clean !== false)
       rimraf.sync(dir)
