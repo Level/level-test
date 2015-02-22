@@ -23,7 +23,7 @@ function disk (opts) {
     var dir = path.join(tmpdir, name)
     if(_opts.clean !== false)
       rimraf.sync(dir)
-    _opts.db = leveldown
+    _opts.db = _opts.db || leveldown
     return levelup(dir, _opts, cb)
   }
 }
