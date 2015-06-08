@@ -9,19 +9,19 @@
   },
   "dependencies": {
     "level-js": "~2.1.6",
-    "rimraf": "~2.2.6",
-    "osenv": "0.1.0",
-    "memdown": "~0.10.2",
-    "levelup": "~0.19.0",
+    "rimraf": "~2.3.4",
+    "osenv": "~0.1.1",
+    "memdown": "~1.0.0",
+    "levelup": "~1.1.1",
     "xtend": "~4.0.0",
-    "mkdirp": "~0.5.0"
+    "mkdirp": "~0.5.1"
   },
   "optionalDependencies": {
-    "leveldown": "~0.10.2"
+    "leveldown": "~1.2.2"
   },
   "devDependencies": {
     "tape": "~3.0.0",
-    "leveldown-hyper": "~0.10.2"
+    "leveldown-hyper": "~1.0.0"
   },
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
