@@ -9,12 +9,13 @@
   },
   "dependencies": {
     "level-js": "~2.1.6",
-    "rimraf": "~2.3.4",
-    "osenv": "~0.1.1",
-    "memdown": "~1.0.0",
+    "leveldown": "^1.4.1",
     "levelup": "~1.1.1",
-    "xtend": "~4.0.0",
-    "mkdirp": "~0.5.1"
+    "memdown": "~1.0.0",
+    "mkdirp": "~0.5.1",
+    "osenv": "~0.1.1",
+    "rimraf": "~2.3.4",
+    "xtend": "~4.0.0"
   },
   "optionalDependencies": {
     "leveldown": "^1.2.2"
