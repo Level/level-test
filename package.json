@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "tape": "~3.0.0",
-    "leveldown-hyper": "~1.0.0"
+    "leveldown-hyper": "~1.1.1"
   },
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
