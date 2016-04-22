@@ -21,7 +21,7 @@
     "leveldown": "^1.2.2"
   },
   "devDependencies": {
-    "tape": "~3.0.0",
+    "tape": "~4.5.0",
     "leveldown-hyper": "~1.0.0"
   },
   "scripts": {
