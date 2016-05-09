@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "level": "^1.4.0",
-    "level-js": "~2.1.6",
+    "level-js": "~2.2.4",
     "levelup": "~1.1.1",
     "memdown": "~1.0.0",
     "mkdirp": "~0.5.1",
