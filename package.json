@@ -10,7 +10,7 @@
   "dependencies": {
     "level": "^1.4.0",
     "level-js": "~2.1.6",
-    "levelup": "~1.1.1",
+    "levelup": "~1.3.2",
     "memdown": "~1.0.0",
     "mkdirp": "~0.5.1",
     "osenv": "~0.1.1",
