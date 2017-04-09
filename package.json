@@ -10,7 +10,8 @@
   "dependencies": {
     "level": "^1.4.0",
     "level-js": "~2.1.6",
-    "levelup": "~1.1.1",
+    "leveldown": "^1.5.3",
+    "levelup": "^1.3.3",
     "memdown": "~1.0.0",
     "mkdirp": "~0.5.1",
     "osenv": "~0.1.1",
@@ -21,8 +22,7 @@
     "leveldown": "^1.2.2"
   },
   "devDependencies": {
-    "tape": "~3.0.0",
-    "leveldown-hyper": "~1.0.0"
+    "tape": "~3.0.0"
   },
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
@@ -41,3 +41,4 @@
     "files": "test/*.js"
   }
 }
+
