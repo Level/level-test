@@ -11,7 +11,7 @@
     "level": "^1.4.0",
     "level-js": "~2.1.6",
     "leveldown": "^1.5.3",
-    "levelup": "^1.3.3",
+    "levelup": "^1.3.6",
     "memdown": "~1.0.0",
     "mkdirp": "~0.5.1",
     "osenv": "~0.1.1",
