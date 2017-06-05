@@ -21,6 +21,10 @@
   "optionalDependencies": {
     "leveldown": "^1.2.2"
   },
+  "browser": {
+    "os": false,
+    "rimraf": false
+  },
   "devDependencies": {
     "tape": "~3.0.0"
   },
