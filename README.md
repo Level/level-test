@@ -5,6 +5,7 @@
 > Inject different level implementations (browser, leveldb, etc) into your tests.
 
 [![Build Status](https://travis-ci.org/Level/level-test.svg?branch=master)](https://travis-ci.org/Level/level-test)
+[![Greenkeeper badge](https://badges.greenkeeper.io/Level/level-test.svg)](https://greenkeeper.io/)
 
 [![testling](https://ci.testling.com/dominictarr/level-test.png)
 ](https://ci.testling.com/dominictarr/level-test)
