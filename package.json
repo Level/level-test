@@ -22,8 +22,8 @@
     "leveldown": "^1.2.2"
   },
   "devDependencies": {
-    "standard": "~11.0.1",
-    "tape": "~4.8.0"
+    "standard": "^11.0.1",
+    "tape": "^4.8.0"
   },
   "scripts": {
     "test": "standard && tape test/*.js"
