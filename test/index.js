@@ -2,7 +2,7 @@ var level = require('../')()
 var test = require('tape')
 
 test('simple', function (t) {
-  var db = level('level-test', {encoding: 'json'})
+  var db = level('level-test-simple', {encoding: 'json'})
   var key = ''+Math.random()
   var value = '' + new Date()
 
@@ -25,7 +25,7 @@ test('default name', function (t) {
 })
 
 test('options (valueEncoding: json)', function (t) {
-  var db = level('level-test2', {valueEncoding: 'json'})
+  var db = level('level-test-options', {valueEncoding: 'json'})
   var key = ''+Math.random()
   var value = {test_key: '' + new Date()}
 
@@ -38,6 +38,3 @@ test('options (valueEncoding: json)', function (t) {
     })
   })
 })
-
-
-

@@ -2,7 +2,7 @@ var level = require('../')( { mem: true } )
 var test = require('tape')
 
 test('simple', function (t) {
-  var db = level('level-test', {encoding: 'json'})
+  var db = level('level-test-simple-mem', {encoding: 'json'})
   var key = ''+Math.random()
   var value = '' + new Date()
 

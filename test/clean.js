@@ -4,11 +4,11 @@ var test = require('tape')
 test('clean', function (t) {
   t.plan(5)
 
-  var db = level('level-test', { clean: true })
+  var db = level('level-test-clean-1', { clean: true })
 
   db.get('foo', function (err) {
     t.ok(err)
-    
+
     db.put('foo', 'bar', function (err) {
       t.error(err)
 
@@ -18,7 +18,7 @@ test('clean', function (t) {
         db.close(function (err) {
           t.error(err)
 
-          var db2 = level('level-test', { clean: true })
+          var db2 = level('level-test-clean-2', { clean: true })
           db2.get('foo', function (err) {
             t.ok(err)
           })
