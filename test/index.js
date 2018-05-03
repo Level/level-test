@@ -18,7 +18,7 @@ function suite (level, expectedDown) {
   test('simple', function (t) {
     t.plan(4)
 
-    var db = level(name(), {encoding: 'json'})
+    var db = level(name())
     var key = '' + Math.random()
     var value = '' + new Date()
 
