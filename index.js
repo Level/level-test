@@ -21,8 +21,7 @@ function disk (opts) {
     name = name || 'db_' + Date.now()
     mkdirp.sync(tmpdir)
     var dir = path.join(tmpdir, name)
-    if(_opts.clean !== false)
-      rimraf.sync(dir)
+    if (_opts.clean !== false) { rimraf.sync(dir) }
     _opts.db = _opts.db || leveldown
     return levelup(dir, _opts, cb)
   }
@@ -35,9 +34,7 @@ function mem (name, _opts, cb) {
   return levelup(name, _opts, cb)
 }
 
-
 module.exports = function (opts) {
   opts = opts || {}
   return opts.mem ? mem : disk(opts)
 }
-

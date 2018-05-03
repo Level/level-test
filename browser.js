@@ -7,10 +7,12 @@ function browser (opts) {
     name = name || 'db_' + Date.now()
     _opts = _opts || {}
     var ljs
-    _opts.db = function (l) { return ljs = new Leveljs(l) }
+    _opts.db = function (l) {
+      ljs = new Leveljs(l)
+      return ljs
+    }
     var db = levelup(name, _opts, cb)
-    if (opts.clean !== false)
-      ljs.idb.deleteDatabase()
+    if (opts.clean !== false) { ljs.idb.deleteDatabase() }
     return db
   }
 }
@@ -26,4 +28,3 @@ module.exports = function (opts) {
   opts = opts || {}
   return opts.mem ? mem : browser(opts)
 }
-
