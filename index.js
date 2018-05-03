@@ -19,7 +19,9 @@ function getDown (opts) {
   }
 }
 
-function wrap (levelup, parentOpts) {
+function wrap (down, parentOpts) {
+  var levelup = packager(down)
+
   return function (loc, opts, cb) {
     opts = xtend(opts, parentOpts)
 
@@ -44,5 +46,5 @@ module.exports = function (down, opts) {
   opts = xtend(opts)
   down = down || (opts.mem ? memdown : getDown(opts))
 
-  return wrap(packager(down), opts)
+  return wrap(down, opts)
 }

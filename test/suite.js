@@ -1,25 +1,47 @@
 'use strict'
 
 var test = require('tape')
-var leveldown = require('leveldown')
-var memdown = require('memdown')
-var jsondown = require('jsondown')
-var levelTest = require('../')
-var innerDb = require('./util/inner-db')
-
-suite(levelTest(), leveldown)
-suite(levelTest({ mem: true }), memdown)
-
-// Custom stores
-suite(levelTest(memdown, { mem: true }), memdown)
-suite(levelTest(jsondown), jsondown)
+var defaultLevel = require('../')()
 
 function name () {
   var seq = name.seq = (name.seq || 0) + 1
   return 'level-test-' + seq
 }
 
-function suite (level, expectedDown) {
+function innerDb (db) {
+  while (db.db) db = db.db
+  return db
+}
+
+test('clean', function (t) {
+  t.plan(5)
+
+  var loc = name()
+  var db = defaultLevel(loc, { clean: true })
+
+  db.get('foo', function (err) {
+    t.ok(err)
+
+    db.put('foo', 'bar', function (err) {
+      t.error(err)
+
+      db.get('foo', function (err) {
+        t.notOk(err)
+
+        db.close(function (err) {
+          t.error(err)
+
+          var db2 = defaultLevel(loc, { clean: true })
+          db2.get('foo', function (err) {
+            t.ok(err)
+          })
+        })
+      })
+    })
+  })
+})
+
+module.exports = function suite (level, expectedDown) {
   test('simple', function (t) {
     t.plan(4)
 

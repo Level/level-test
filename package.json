@@ -20,24 +20,16 @@
     "leveldown": "~3.0.1"
   },
   "devDependencies": {
+    "airtap": "0.0.4",
     "jsondown": "~1.0.0",
     "standard": "^11.0.1",
     "tape": "^4.8.0"
   },
   "scripts": {
-    "test": "standard && tape test/*.js"
+    "test": "standard && tape test/node.js",
+    "test-browser-local": "airtap --no-coverage --local 8080 test/browser.js"
   },
   "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
   "license": "MIT",
-  "browser": "browser.js",
-  "testling": {
-    "browsers": [
-      "ie/9..latest",
-      "firefox/15..latest",
-      "chrome/22..latest",
-      "opera/12..latest",
-      "safari/5.1..latest"
-    ],
-    "files": "test/*.js"
-  }
+  "browser": "browser.js"
 }

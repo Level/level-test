@@ -1,30 +1,39 @@
-var levelup = require('levelup')
-var Leveljs = require('level-js')
-var Memdown = require('memdown')
+'use strict'
 
-function browser (opts) {
-  return function (name, _opts, cb) {
-    name = name || 'db_' + Date.now()
-    _opts = _opts || {}
-    var ljs
-    _opts.db = function (l) {
-      ljs = new Leveljs(l)
-      return ljs
+var packager = require('level-packager')
+var leveljs = require('level-js')
+var memdown = require('memdown')
+var xtend = require('xtend')
+
+function wrap (down, parentOpts) {
+  var levelup = packager(down)
+
+  return function (loc, opts, cb) {
+    opts = xtend(opts, parentOpts)
+
+    if (!parentOpts.mem) {
+      loc = loc || 'db_' + Date.now()
+
+      if (opts.clean !== false && typeof down.destroy === 'function') {
+        down.destroy(loc, function () {
+          // TODO: this must be finished before we open the new db
+        })
+      }
     }
-    var db = levelup(name, _opts, cb)
-    if (opts.clean !== false) { ljs.idb.deleteDatabase() }
-    return db
+
+    // Note: memdown ignores loc
+    return levelup(loc, opts, cb)
   }
 }
 
-function mem (name, _opts, cb) {
-  _opts = _opts || {}
-  _opts.db = function (l) { return new Memdown(l) }
-  name = name || 'in-memory'
-  return levelup(name, _opts, cb)
-}
+module.exports = function (down, opts) {
+  if (typeof down !== 'function') {
+    opts = down
+    down = null
+  }
 
-module.exports = function (opts) {
-  opts = opts || {}
-  return opts.mem ? mem : browser(opts)
+  opts = xtend(opts)
+  down = down || (opts.mem ? memdown : leveljs)
+
+  return wrap(down, opts)
 }
