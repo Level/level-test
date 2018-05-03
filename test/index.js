@@ -3,11 +3,16 @@
 var test = require('tape')
 var leveldown = require('leveldown')
 var memdown = require('memdown')
+var jsondown = require('jsondown')
 var levelTest = require('../')
 var innerDb = require('./util/inner-db')
 
 suite(levelTest(), leveldown)
 suite(levelTest({ mem: true }), memdown)
+
+// Custom stores
+suite(levelTest(memdown, { mem: true }), memdown)
+suite(levelTest(jsondown), jsondown)
 
 function name () {
   var seq = name.seq = (name.seq || 0) + 1

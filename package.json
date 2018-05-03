@@ -20,6 +20,7 @@
     "leveldown": "~3.0.1"
   },
   "devDependencies": {
+    "jsondown": "~1.0.0",
     "standard": "^11.0.1",
     "tape": "^4.8.0"
   },
