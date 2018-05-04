@@ -14,3 +14,4 @@ suite.args(levelTest(memdown, { mem: true }), memdown)
 suite.args(levelTest(jsondown), jsondown)
 
 suite.clean(levelTest())
+suite.options(levelTest)

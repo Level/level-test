@@ -13,3 +13,4 @@ suite.args(levelTest(memdown, { mem: true }), memdown)
 suite.args(levelTest(leveljs), leveljs)
 
 suite.clean(levelTest())
+suite.options(levelTest)
