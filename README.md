@@ -1,14 +1,13 @@
 # level-test
 
-<img alt="LevelDB Logo" height="100" src="http://leveldb.org/img/logo.svg">
-
 > Inject different level implementations (browser, leveldb, etc) into your tests.
 
-[![Build Status](https://travis-ci.org/Level/level-test.svg?branch=master)](https://travis-ci.org/Level/level-test)
-[![Greenkeeper badge](https://badges.greenkeeper.io/Level/level-test.svg)](https://greenkeeper.io/)
-
-[![testling](https://ci.testling.com/dominictarr/level-test.png)
-](https://ci.testling.com/dominictarr/level-test)
+[![level badge][level-badge]](https://github.com/level/awesome)
+[![npm](https://img.shields.io/npm/v/level-test.svg)](https://www.npmjs.com/package/level-test)
+![Node version](https://img.shields.io/node/v/level-test.svg)
+[![Build Status](https://secure.travis-ci.org/Level/level-test.svg)](http://travis-ci.org/Level/level-test)
+[![dependencies](https://david-dm.org/Level/level-test.svg)](https://david-dm.org/level/level-test)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Example
 
@@ -57,3 +56,5 @@ Configure leveldb settings via command line options/environment vars.
 ## License
 
 MIT
+
+[level-badge]: http://leveldb.org/img/badge.svg

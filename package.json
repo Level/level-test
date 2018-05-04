@@ -31,5 +31,8 @@
   },
   "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
   "license": "MIT",
-  "browser": "browser.js"
+  "browser": "browser.js",
+  "engines": {
+    "node": ">=4"
+  }
 }
