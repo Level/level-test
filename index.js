@@ -36,7 +36,7 @@ function wrap (down, parentOpts) {
       opts = null
     }
 
-    opts = xtend(opts, parentOpts)
+    opts = xtend(parentOpts, opts)
 
     if (!parentOpts.mem) {
       loc = loc || 'db_' + Date.now()
