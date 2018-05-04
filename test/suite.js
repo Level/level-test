@@ -42,7 +42,7 @@ test('clean', function (t) {
 })
 
 module.exports = function suite (level, expectedDown) {
-  test('simple', function (t) {
+  test('with name', function (t) {
     t.plan(4)
 
     var db = level(name())
@@ -63,7 +63,7 @@ module.exports = function suite (level, expectedDown) {
     })
   })
 
-  test('default name', function (t) {
+  test('without arguments', function (t) {
     t.plan(3)
 
     var db = level()
@@ -78,7 +78,7 @@ module.exports = function suite (level, expectedDown) {
     })
   })
 
-  test('options (valueEncoding: json)', function (t) {
+  test('with name and options (valueEncoding: json)', function (t) {
     t.plan(4)
 
     var db = level(name(), { valueEncoding: 'json' })
@@ -95,6 +95,66 @@ module.exports = function suite (level, expectedDown) {
       db.get(key, function (err, _value) {
         t.ifError(err)
         t.deepEqual(_value, value)
+      })
+    })
+  })
+
+  test('with name, options and callback', function (t) {
+    t.plan(6)
+
+    level(name(), { valueEncoding: 'json' }, function (err, db) {
+      t.ifError(err)
+      t.ok(db.isOpen())
+      t.ok(innerDb(db) instanceof expectedDown, 'got expected down')
+
+      var key = '' + Math.random()
+      var value = { test_key: '' + new Date() }
+
+      db.put(key, value, function (err) {
+        t.notOk(err)
+
+        db.get(key, function (err, _value) {
+          t.ifError(err)
+          t.deepEqual(_value, value)
+        })
+      })
+    })
+  })
+
+  test('with name and callback', function (t) {
+    t.plan(6)
+
+    level(name(), function (err, db) {
+      t.ifError(err)
+      t.ok(db.isOpen())
+      t.ok(innerDb(db) instanceof expectedDown, 'got expected down')
+
+      db.put('key', 'value', function (err) {
+        t.notOk(err)
+
+        db.get('key', function (err, value) {
+          t.ifError(err)
+          t.is(value, 'value')
+        })
+      })
+    })
+  })
+
+  test('with callback', function (t) {
+    t.plan(6)
+
+    level(function (err, db) {
+      t.ifError(err)
+      t.ok(db.isOpen())
+      t.ok(innerDb(db) instanceof expectedDown, 'got expected down')
+
+      db.put('key', 'value', function (err) {
+        t.notOk(err)
+
+        db.get('key', function (err, value) {
+          t.ifError(err)
+          t.is(value, 'value')
+        })
       })
     })
   })

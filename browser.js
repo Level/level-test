@@ -9,6 +9,15 @@ function wrap (down, parentOpts) {
   var levelup = packager(down)
 
   return function (loc, opts, cb) {
+    if (typeof loc === 'function') {
+      cb = loc
+      loc = null
+      opts = null
+    } else if (typeof opts === 'function') {
+      cb = opts
+      opts = null
+    }
+
     opts = xtend(opts, parentOpts)
 
     if (!parentOpts.mem) {
