@@ -1,43 +1,50 @@
-var levelup = require('levelup')
-var Memdown = require('memdown')
+'use strict'
+
+var packager = require('level-packager')
+var memdown = require('memdown')
 var rimraf = require('rimraf')
 var mkdirp = require('mkdirp')
 var tmpdir = require('osenv').tmpdir()
 var path = require('path')
 var xtend = require('xtend')
-function maybeLevelDown () {
+
+function getDown (opts) {
   try {
     return require('leveldown')
   } catch (err) {
-    console.error('could not load leveldown, fallback to memdown')
-    return Memdown
+    console.error('could not require leveldown, fallback to memdown')
+
+    opts.mem = true
+    return memdown
   }
 }
 
-function disk (opts) {
-  var leveldown = maybeLevelDown()
-  return function (name, _opts, cb) {
-    _opts = xtend(opts, _opts)
-    name = name || 'db_' + Date.now()
-    mkdirp.sync(tmpdir)
-    var dir = path.join(tmpdir, name)
-    if(_opts.clean !== false)
-      rimraf.sync(dir)
-    _opts.db = _opts.db || leveldown
-    return levelup(dir, _opts, cb)
+function wrap (down, parentOpts) {
+  var levelup = packager(down)
+
+  return function (loc, opts, cb) {
+    opts = xtend(opts, parentOpts)
+
+    if (!parentOpts.mem) {
+      loc = loc || 'db_' + Date.now()
+      mkdirp.sync(tmpdir)
+      loc = path.join(tmpdir, loc)
+      if (opts.clean !== false) rimraf.sync(loc)
+    }
+
+    // Note: memdown ignores loc
+    return levelup(loc, opts, cb)
   }
 }
 
-function mem (name, _opts, cb) {
-  _opts = _opts || {}
-  _opts.db = function (l) { return new Memdown(l) }
-  name = name || 'in-memory'
-  return levelup(name, _opts, cb)
+module.exports = function (down, opts) {
+  if (typeof down !== 'function') {
+    opts = down
+    down = null
+  }
+
+  opts = xtend(opts)
+  down = down || (opts.mem ? memdown : getDown(opts))
+
+  return wrap(down, opts)
 }
-
-
-module.exports = function (opts) {
-  opts = opts || {}
-  return opts.mem ? mem : disk(opts)
-}
-
