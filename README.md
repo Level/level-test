@@ -16,14 +16,14 @@ so that the same test can be used in the server or the browser!
 
 ``` js
 const level = require('level-test')()
-const db = level('foo', { encoding: 'json' })
+const db = level('foo', { valueEncoding: 'json' })
 ```
 
 ## In Memory Example
 
 ``` js
 const level = require('level-test')({ mem: true })
-const db = level('foo', { encoding: 'json' })
+const db = level('foo', { valueEncoding: 'json' })
 ```
 
 Use whatever test framework you like!
@@ -35,7 +35,7 @@ A custom backend for `levelup` can be provided via the options object:
 ```js
 const hyper = require('leveldown-hyper')
 const level = require('level-test')({ db: hyper })
-const db = level('foo', { encoding: 'json' })
+const db = level('foo', { valueEncoding: 'json' })
 ```
 
 ## Options
