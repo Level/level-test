@@ -5,9 +5,11 @@ var memdown = require('memdown')
 var levelTest = require('../')
 var suite = require('./suite')
 
-suite(levelTest(), leveljs)
-suite(levelTest({ mem: true }), memdown)
+suite.args(levelTest(), leveljs)
+suite.args(levelTest({ mem: true }), memdown)
 
 // Custom stores
-suite(levelTest(memdown, { mem: true }), memdown)
-suite(levelTest(leveljs), leveljs)
+suite.args(levelTest(memdown, { mem: true }), memdown)
+suite.args(levelTest(leveljs), leveljs)
+
+suite.clean(levelTest())
