@@ -78,7 +78,7 @@ module.exports = function suite (level, expectedDown) {
     })
   })
 
-  test('with name and options (valueEncoding: json)', function (t) {
+  test('with name and options', function (t) {
     t.plan(4)
 
     var db = level(name(), { valueEncoding: 'json' })
@@ -117,6 +117,49 @@ module.exports = function suite (level, expectedDown) {
           t.ifError(err)
           t.deepEqual(_value, value)
         })
+      })
+    })
+  })
+
+  test('with options and callback', function (t) {
+    t.plan(6)
+
+    level({ valueEncoding: 'json' }, function (err, db) {
+      t.ifError(err)
+      t.ok(db.isOpen())
+      t.ok(innerDb(db) instanceof expectedDown, 'got expected down')
+
+      var key = '' + Math.random()
+      var value = { test_key: '' + new Date() }
+
+      db.put(key, value, function (err) {
+        t.notOk(err)
+
+        db.get(key, function (err, _value) {
+          t.ifError(err)
+          t.deepEqual(_value, value)
+        })
+      })
+    })
+  })
+
+  test('with options', function (t) {
+    t.plan(4)
+
+    var db = level({ valueEncoding: 'json' })
+    var key = '' + Math.random()
+    var value = { test_key: '' + new Date() }
+
+    db.on('open', function () {
+      t.ok(innerDb(db) instanceof expectedDown, 'got expected down')
+    })
+
+    db.put(key, value, function (err) {
+      t.notOk(err)
+
+      db.get(key, function (err, _value) {
+        t.ifError(err)
+        t.deepEqual(_value, value)
       })
     })
   })

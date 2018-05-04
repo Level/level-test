@@ -23,11 +23,15 @@ function wrap (down, parentOpts) {
   var levelup = packager(down)
 
   return function (loc, opts, cb) {
-    if (typeof loc === 'function') {
+    if (typeof loc === 'function') { // (cb)
       cb = loc
       loc = null
       opts = null
-    } else if (typeof opts === 'function') {
+    } else if (typeof loc === 'object' && loc !== null) { // (opts[, cb])
+      cb = opts
+      opts = loc
+      loc = null
+    } else if (typeof opts === 'function') { // (name, cb)
       cb = opts
       opts = null
     }
