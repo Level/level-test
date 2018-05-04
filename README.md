@@ -9,48 +9,66 @@
 [![dependencies](https://david-dm.org/Level/level-test.svg)](https://david-dm.org/level/level-test)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Example
+## Usage
 
-Create a fresh db, without refering to any fs or dom specifics,
-so that the same test can be used in the server or the browser!
+Create a fresh db, without refering to any file system or DOM specifics,
+so that the same test can be used in the server or the browser! Use whatever test framework you like.
 
-``` js
+```js
 const level = require('level-test')()
 const db = level('foo', { valueEncoding: 'json' })
 ```
 
-## In Memory Example
+In node it defaults to [`leveldown`](https://github.com/level/leveldown) for storage, using a temporary directory. If `leveldown` fails to load it falls back to [`memdown`](https://github.com/level/memdown) which is an in-memory store. In the browser it defaults to [`level-js`](https://github.com/level/level.js).
 
-``` js
+If no name is provided, `level-test` uses a random name:
+
+```js
+const level = require('level-test')()
+const db = level()
+```
+
+In either environment use of [`memdown`](https://github.com/level/memdown) can be forced with `options.mem`:
+
+```js
 const level = require('level-test')({ mem: true })
 const db = level('foo', { valueEncoding: 'json' })
 ```
 
-Use whatever test framework you like!
-
-## Custom Stores
-
-A [custom `abstract-leveldown` compliant store](https://github.com/Level/awesome#stores) can be provided:
+Or use [any `abstract-leveldown` compliant store](https://github.com/Level/awesome#stores)! In this case `level-test` assumes the storage is on disk and will thus create a temporary directory and clean it (see [`options.clean`](#ctor)).
 
 ```js
-const hyper = require('leveldown-hyper')
-const level = require('level-test')(hyper)
+const rocksdb = require('rocksdb')
+const level = require('level-test')(rocksdb)
 const db = level('foo', { valueEncoding: 'json' })
 ```
 
-## Options
+## API
 
-Currently supported options:
+<a name="factory"></a>
+### `ctor = levelTest([store][, options])`
 
-``` js
-level(name, {
-  clean: false // do not delete database (defaults to true)
-})
+Returns a function `ctor` that creates preconfigured [`levelup`](https://github.com/level/levelup) instances with temporary storage. The `store` if provided must be a function and [`abstract-leveldown`](https://github.com/level/abstract-leveldown) compliant. Options:
+
+- `mem`: use `memdown` as `store`, default false. True implies `clean: false`.
+- Any other option will be merged into `ctor` options, the latter taking precedence.
+
+These are equal:
+
+```js
+const db1 = require('level-test')({ valueEncoding: 'json' })()
+const db2 = require('level-test')()({ valueEncoding: 'json' })
 ```
 
-## TODO
+<a name="ctor"></a>
+### `db = ctor([name][, options][, callback])`
 
-Configure leveldb settings via command line options/environment vars.
+Returns a [`levelup` instance](https://github.com/Level/levelup#api) via [`level-packager`](https://github.com/level/packager) which wraps the underlying store with [`encoding-down`](https://github.com/level/encoding-down). In short: the db is functionally equivalent to [`level`](https://github.com/level/level). You get deferred open, encodings, Promise support, readable streams and more! Options:
+
+- `clean`: nuke directory beforehand (synchronously), default true. In the browser this option clears the IndexedDB object store, of if a custom store was provided, calls `store.destroy(location, callback)` if implemented.
+- Other options are passed to [`levelup`](https://github.com/level/levelup) (which in turn passes them on to the store when opened) as well as [`encoding-down`](https://github.com/level/encoding-down).
+
+Please refer to [`levelup` documentation](https://github.com/Level/levelup#levelupdb-options-callback) for usage of the optional `callback`.
 
 ## Contributing
 
