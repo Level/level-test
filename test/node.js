@@ -6,9 +6,12 @@ var jsondown = require('jsondown')
 var levelTest = require('../')
 var suite = require('./suite')
 
-suite(levelTest(), leveldown)
-suite(levelTest({ mem: true }), memdown)
+suite.args(levelTest(), leveldown)
+suite.args(levelTest({ mem: true }), memdown)
 
 // Custom stores
-suite(levelTest(memdown, { mem: true }), memdown)
-suite(levelTest(jsondown), jsondown)
+suite.args(levelTest(memdown, { mem: true }), memdown)
+suite.args(levelTest(jsondown), jsondown)
+
+suite.clean(levelTest())
+suite.options(levelTest)

@@ -1,7 +1,6 @@
 'use strict'
 
 var test = require('tape')
-var defaultLevel = require('../')()
 
 function name () {
   var seq = name.seq = (name.seq || 0) + 1
@@ -13,35 +12,37 @@ function innerDb (db) {
   return db
 }
 
-test('clean', function (t) {
-  t.plan(5)
+exports.clean = function (level) {
+  test('clean', function (t) {
+    t.plan(5)
 
-  var loc = name()
-  var db = defaultLevel(loc, { clean: true })
+    var loc = name()
+    var db = level(loc, { clean: true })
 
-  db.get('foo', function (err) {
-    t.ok(err)
+    db.get('foo', function (err) {
+      t.ok(err)
 
-    db.put('foo', 'bar', function (err) {
-      t.error(err)
+      db.put('foo', 'bar', function (err) {
+        t.error(err)
 
-      db.get('foo', function (err) {
-        t.notOk(err)
+        db.get('foo', function (err) {
+          t.notOk(err)
 
-        db.close(function (err) {
-          t.error(err)
+          db.close(function (err) {
+            t.error(err)
 
-          var db2 = defaultLevel(loc, { clean: true })
-          db2.get('foo', function (err) {
-            t.ok(err)
+            var db2 = level(loc, { clean: true })
+            db2.get('foo', function (err) {
+              t.ok(err)
+            })
           })
         })
       })
     })
   })
-})
+}
 
-module.exports = function suite (level, expectedDown) {
+exports.args = function (level, expectedDown) {
   test('with name', function (t) {
     t.plan(4)
 
@@ -198,6 +199,35 @@ module.exports = function suite (level, expectedDown) {
           t.ifError(err)
           t.is(value, 'value')
         })
+      })
+    })
+  })
+}
+
+exports.options = function (levelTest) {
+  test('opts precedence', function (t) {
+    t.plan(6)
+
+    var level = levelTest({ valueEncoding: 'utf8' })
+    var db1 = level(name())
+    var db2 = level(name(), { valueEncoding: 'json' })
+    var value = { test: true }
+
+    db1.put('key', value, function (err) {
+      t.ifError(err)
+
+      db1.get('key', function (err, value1) {
+        t.ifError(err)
+        t.is(value1, '[object Object]')
+      })
+    })
+
+    db2.put('key', value, function (err) {
+      t.ifError(err)
+
+      db2.get('key', function (err, value2) {
+        t.ifError(err)
+        t.deepEqual(value2, value)
       })
     })
   })
