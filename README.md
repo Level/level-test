@@ -28,13 +28,13 @@ const db = level('foo', { valueEncoding: 'json' })
 
 Use whatever test framework you like!
 
-## Custom Backends
+## Custom Stores
 
-A custom backend for `levelup` can be provided via the options object:
+A [custom `abstract-leveldown` compliant store](https://github.com/Level/awesome#stores) can be provided:
 
 ```js
 const hyper = require('leveldown-hyper')
-const level = require('level-test')({ db: hyper })
+const level = require('level-test')(hyper)
 const db = level('foo', { valueEncoding: 'json' })
 ```
 
@@ -44,8 +44,7 @@ Currently supported options:
 
 ``` js
 level(name, {
-  clean: false, // do not delete database (defaults to true)
-  db: require('leveldown-hyper') // optional, defaults to leveldown
+  clean: false // do not delete database (defaults to true)
 })
 ```
 
