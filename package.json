@@ -33,6 +33,6 @@
   "license": "MIT",
   "browser": "browser.js",
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   }
 }
