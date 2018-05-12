@@ -1,7 +1,5 @@
 # level-test
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/Level/level-test.svg)](https://greenkeeper.io/)
-
 > Inject different level implementations (browser, leveldb, etc) into your tests.
 
 [![level badge][level-badge]](https://github.com/level/awesome)
