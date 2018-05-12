@@ -20,7 +20,7 @@
     "leveldown": "~3.0.1"
   },
   "devDependencies": {
-    "airtap": "0.0.4",
+    "airtap": "0.0.5",
     "jsondown": "~1.0.0",
     "standard": "^11.0.1",
     "tape": "^4.8.0"
