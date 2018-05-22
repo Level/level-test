@@ -10,7 +10,7 @@
   "dependencies": {
     "level-js": "~2.2.4",
     "level-packager": "~2.1.1",
-    "memdown": "~2.0.0",
+    "memdown": "~3.0.0",
     "mkdirp": "~0.5.1",
     "osenv": "~0.1.1",
     "rimraf": "~2.6.1",
