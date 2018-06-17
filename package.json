@@ -8,7 +8,7 @@
     "url": "git://github.com/dominictarr/level-test.git"
   },
   "dependencies": {
-    "level-js": "~2.2.4",
+    "level-js": "~3.0.0",
     "level-packager": "~3.0.0",
     "memdown": "~3.0.0",
     "mkdirp": "~0.5.1",
