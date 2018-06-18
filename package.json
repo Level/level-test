@@ -2,10 +2,10 @@
   "name": "level-test",
   "description": "get a clean levelup instance for testing.",
   "version": "3.0.0",
-  "homepage": "https://github.com/dominictarr/level-test",
+  "homepage": "https://github.com/Level/level-test",
   "repository": {
     "type": "git",
-    "url": "git://github.com/dominictarr/level-test.git"
+    "url": "git://github.com/Level/level-test.git"
   },
   "dependencies": {
     "level-js": "~3.0.0",
