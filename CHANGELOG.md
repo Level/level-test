@@ -19,8 +19,7 @@
 ### Changed
 * Update README style (@ralphtheninja, @vweevers)
 * Upgrade `level-js` from `~2.1.6` to `~2.2.4` (@ralphtheninja, @greenkeeper)
-* Upgrade `memdown` from `~1.0.0` to `~1.2.4` (@ralphtheninja, @greenkeeper)
-* Upgrade `memdown` from `~1.2.4` to `~2.0.0` (@vweevers)
+* Upgrade `memdown` from `~1.0.0` to `~2.0.0` (@ralphtheninja, @vweevers, @greenkeeper)
 * Upgrade `rimraf` from `~2.3.4` to `~2.6.1` (@ralphtheninja, @greenkeeper)
 * Upgrade `tape` devDependency from `~3.0.0` to `~4.8.0` (@ralphtheninja, @greenkeeper)
 * Simplify `npm test` (@vweevers)
@@ -47,9 +46,6 @@
 * Remove `leveldown` dependency (@vweevers)
 * Remove irrelevant encoding option from test (@vweevers)
 * Remove `testling` from `package.json` (@vweevers)
-
-### Fixed
-* Names in clean tests should be the same (@vweevers)
 
 ## [2.0.3] - 2017-04-09
 
