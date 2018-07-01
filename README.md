@@ -9,6 +9,8 @@
 [![dependencies](https://david-dm.org/Level/level-test.svg)](https://david-dm.org/level/level-test)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md).
+
 ## Usage
 
 Create a fresh db, without refering to any file system or DOM specifics,
