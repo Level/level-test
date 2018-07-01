@@ -145,7 +145,7 @@
 ## [1.5.2] - 2013-10-27
 
 ### Changed
-* Update `.gitinore` (@brycebaril)
+* Update `.gitignore` (@brycebaril)
 * Upgrade `level-js` from `~1.0.3` to `~1.0.8` (@brycebaril)
 * Upgrade `rimraf` from `~2.1.4` to `~2.2.2` (@brycebaril)
 * Upgrade `level` from `>= 0.12 < 1` to `>= 0.17` (@brycebaril)
