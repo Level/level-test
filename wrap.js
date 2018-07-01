@@ -14,7 +14,7 @@ module.exports = function (getDown, getLocation, clean) {
     defaults = xtend(defaults)
     down = down || (defaults.mem ? memdown : getDown(defaults))
 
-    var levelup = packager(down)
+    var level = packager(down)
 
     return function ctor (name, opts, callback) {
       if (typeof name === 'function') {
@@ -38,7 +38,7 @@ module.exports = function (getDown, getLocation, clean) {
         if (opts.clean !== false) clean(location, down)
       }
 
-      return levelup(location, opts, callback)
+      return level(location, opts, callback)
     }
   }
 }
