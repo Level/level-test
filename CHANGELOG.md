@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [4.0.0] - 2018-07-02
+
 ### Changed
 * Upgrade `level-js` from `~2.2.4` to `~3.0.0` (@vweevers, @greenkeeper)
 * Upgrade `level-packager` from `~2.1.1` to `~4.0.0` (@vweevers, @greenkeeper)
@@ -13,6 +15,7 @@
 
 ### Added
 * Add `CHANGELOG.md` (@ralphtheninja)
+* Add `UPGRADING.md` (@ralphtheninja)
 
 ## [3.0.0] - 2018-05-10
 
@@ -231,7 +234,8 @@
 
 :seedling: Initial release.
 
-[Unreleased]: https://github.com/level/level-test/compare/v3.0.0...HEAD
+[Unreleased]: https://github.com/level/level-test/compare/v4.0.0...HEAD
+[4.0.0]: https://github.com/level/level-test/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/level/level-test/compare/v2.0.3...v3.0.0
 [2.0.3]: https://github.com/level/level-test/compare/v2.0.2...v2.0.3
 [2.0.2]: https://github.com/level/level-test/compare/v2.0.1...v2.0.2

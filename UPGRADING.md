@@ -2,6 +2,15 @@
 
 This document describes breaking changes and how to upgrade. For a complete list of changes including minor and patch releases, please refer to the [changelog](CHANGELOG.md).
 
+## v4
+
+We updated `level-js` to a new major version with changes to browser support, which warranted a new major version.
+
+For more information please see:
+
+* [`level-js/UPGRADING.md`](https://github.com/Level/level-js/blob/master/UPGRADING.md)
+* [`level-js/CHANGELOG.md`](https://github.com/Level/level-js/blob/master/CHANGELOG.md)
+
 ## v3
 
 Dropped support for node 0.10.
