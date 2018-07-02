@@ -4,7 +4,7 @@ This document describes breaking changes and how to upgrade. For a complete list
 
 ## v4
 
-We updated `level-js` to a new major version with changes to browser support, which warranted a new major version.
+We updated `level-js` to `v3.0.0` with changes to browser support, which warranted a new major version.
 
 For more information please see:
 
