@@ -1,15 +1,28 @@
 'use strict'
 
 var test = require('tape')
+var abstract = require('abstract-leveldown')
 
 function name () {
   var seq = name.seq = (name.seq || 0) + 1
   return 'level-test-' + seq
 }
 
-function innerDb (db) {
-  while (db.db) db = db.db
-  return db
+function isAbstract (db) {
+  if (!db || typeof db !== 'object') { return false }
+  return Object.keys(abstract.AbstractLevelDOWN.prototype).filter(function (name) {
+    return name[0] !== '_'
+  }).every(function (name) {
+    return typeof db[name] === 'function'
+  })
+}
+
+function down (db, type) {
+  if (typeof db.down === 'function') return db.down(type)
+  if (type && db.type === type) return db
+  if (isAbstract(db.db)) return down(db.db, type)
+  if (isAbstract(db._db)) return down(db._db, type)
+  return type ? null : db
 }
 
 exports.clean = function (level) {
@@ -51,7 +64,7 @@ exports.args = function (level, expectedDown) {
     var value = '' + new Date()
 
     db.on('open', function () {
-      t.ok(innerDb(db) instanceof expectedDown, 'got expected down')
+      t.ok(down(db) instanceof expectedDown, 'got expected down')
     })
 
     db.put(key, value, function (err) {
@@ -70,7 +83,7 @@ exports.args = function (level, expectedDown) {
     var db = level()
 
     db.on('open', function () {
-      t.ok(innerDb(db) instanceof expectedDown, 'got expected down')
+      t.ok(down(db) instanceof expectedDown, 'got expected down')
     })
 
     db.put('foo', 'bar', function (err) {
@@ -87,7 +100,7 @@ exports.args = function (level, expectedDown) {
     var value = { test_key: '' + new Date() }
 
     db.on('open', function () {
-      t.ok(innerDb(db) instanceof expectedDown, 'got expected down')
+      t.ok(down(db) instanceof expectedDown, 'got expected down')
     })
 
     db.put(key, value, function (err) {
@@ -106,7 +119,7 @@ exports.args = function (level, expectedDown) {
     level(name(), { valueEncoding: 'json' }, function (err, db) {
       t.ifError(err)
       t.ok(db.isOpen())
-      t.ok(innerDb(db) instanceof expectedDown, 'got expected down')
+      t.ok(down(db) instanceof expectedDown, 'got expected down')
 
       var key = '' + Math.random()
       var value = { test_key: '' + new Date() }
@@ -128,7 +141,7 @@ exports.args = function (level, expectedDown) {
     level({ valueEncoding: 'json' }, function (err, db) {
       t.ifError(err)
       t.ok(db.isOpen())
-      t.ok(innerDb(db) instanceof expectedDown, 'got expected down')
+      t.ok(down(db) instanceof expectedDown, 'got expected down')
 
       var key = '' + Math.random()
       var value = { test_key: '' + new Date() }
@@ -152,7 +165,7 @@ exports.args = function (level, expectedDown) {
     var value = { test_key: '' + new Date() }
 
     db.on('open', function () {
-      t.ok(innerDb(db) instanceof expectedDown, 'got expected down')
+      t.ok(down(db) instanceof expectedDown, 'got expected down')
     })
 
     db.put(key, value, function (err) {
@@ -171,7 +184,7 @@ exports.args = function (level, expectedDown) {
     level(name(), function (err, db) {
       t.ifError(err)
       t.ok(db.isOpen())
-      t.ok(innerDb(db) instanceof expectedDown, 'got expected down')
+      t.ok(down(db) instanceof expectedDown, 'got expected down')
 
       db.put('key', 'value', function (err) {
         t.notOk(err)
@@ -190,7 +203,7 @@ exports.args = function (level, expectedDown) {
     level(function (err, db) {
       t.ifError(err)
       t.ok(db.isOpen())
-      t.ok(innerDb(db) instanceof expectedDown, 'got expected down')
+      t.ok(down(db) instanceof expectedDown, 'got expected down')
 
       db.put('key', 'value', function (err) {
         t.notOk(err)

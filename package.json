@@ -20,6 +20,7 @@
     "leveldown": "~4.0.0"
   },
   "devDependencies": {
+    "abstract-leveldown": "^5.0.0",
     "airtap": "0.1.0",
     "jsondown": "~1.0.0",
     "standard": "^11.0.1",
