@@ -2,9 +2,7 @@
 
 var memdown = require('memdown')
 var rimraf = require('rimraf')
-var mkdirp = require('mkdirp')
-var tmpdir = require('osenv').tmpdir()
-var path = require('path')
+var tempy = require('tempy')
 var wrap = require('./wrap')
 
 function getDown (defaults) {
@@ -17,9 +15,8 @@ function getDown (defaults) {
   }
 }
 
-function getLocation (name) {
-  mkdirp.sync(tmpdir)
-  return path.join(tmpdir, name)
+function getLocation () {
+  return tempy.directory()
 }
 
 function clean (location) {
