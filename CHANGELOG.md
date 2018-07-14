@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+## [5.0.0] - 2018-07-14
+
+### Changed
+* Upgrade `airtap` devDependency from `0.0.8` to `0.1.0` (@vweevers)
+* Use `tempy` and `uuid` to generate random names (@ralphtheninja)
+
+### Removed
+* Remove node 9 from Travis (@ralphtheninja)
+* Remove `name` parameter from constructor (@ralphtheninja)
+
 ## [4.0.0] - 2018-07-02
 
 ### Changed
@@ -234,7 +244,8 @@
 
 :seedling: Initial release.
 
-[Unreleased]: https://github.com/level/level-test/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/level/level-test/compare/v5.0.0...HEAD
+[5.0.0]: https://github.com/level/level-test/compare/v4.0.0...v5.0.0
 [4.0.0]: https://github.com/level/level-test/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/level/level-test/compare/v2.0.3...v3.0.0
 [2.0.3]: https://github.com/level/level-test/compare/v2.0.2...v2.0.3
