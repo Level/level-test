@@ -1,7 +1,6 @@
 'use strict'
 
 var leveljs = require('level-js')
-var timestamp = require('monotonic-timestamp')
 var wrap = require('./wrap')
 
 function getDown () {
@@ -9,7 +8,7 @@ function getDown () {
 }
 
 function getLocation () {
-  return 'db_' + timestamp()
+  return 'db_' + Date.now()
 }
 
 function clean (location, down) {
