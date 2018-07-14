@@ -7,8 +7,8 @@ function getDown () {
   return leveljs
 }
 
-function getLocation (name) {
-  return name
+function getLocation () {
+  return 'db_' + Date.now()
 }
 
 function clean (location, down) {

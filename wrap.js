@@ -16,15 +16,8 @@ module.exports = function (getDown, getLocation, clean) {
 
     var level = packager(down)
 
-    return function ctor (name, opts, callback) {
-      if (typeof name === 'function') {
-        callback = name
-        name = opts = null
-      } else if (typeof name === 'object' && name !== null) {
-        callback = opts
-        opts = name
-        name = null
-      } else if (typeof opts === 'function') {
+    return function ctor (opts, callback) {
+      if (typeof opts === 'function') {
         callback = opts
         opts = null
       }
@@ -34,7 +27,7 @@ module.exports = function (getDown, getLocation, clean) {
       if (defaults.mem) {
         var location = ''
       } else {
-        location = getLocation(name || 'db_' + Date.now())
+        location = getLocation()
         if (opts.clean !== false) clean(location, down)
       }
 
