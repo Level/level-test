@@ -1,7 +1,6 @@
 'use strict'
 
 var memdown = require('memdown')
-var rimraf = require('rimraf')
 var tempy = require('tempy')
 var wrap = require('./wrap')
 
@@ -19,8 +18,6 @@ function getLocation () {
   return tempy.directory()
 }
 
-function clean (location) {
-  rimraf.sync(location)
-}
+function clean () {}
 
 module.exports = wrap(getDown, getLocation, clean)
