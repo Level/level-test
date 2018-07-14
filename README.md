@@ -18,12 +18,12 @@ so that the same test can be used in the server or the browser! Use whatever tes
 
 ```js
 const level = require('level-test')()
-const db = level('foo', { valueEncoding: 'json' })
+const db = level({ valueEncoding: 'json' })
 ```
 
-In node it defaults to [`leveldown`](https://github.com/level/leveldown) for storage, using a temporary directory. If `leveldown` fails to load it falls back to [`memdown`](https://github.com/level/memdown) which is an in-memory store. In the browser it defaults to [`level-js`](https://github.com/level/level.js).
+In node it defaults to [`leveldown`](https://github.com/level/leveldown) for storage, using a unique temporary directory. If `leveldown` fails to load it falls back to [`memdown`](https://github.com/level/memdown) which is an in-memory store. In the browser it defaults to [`level-js`](https://github.com/level/level.js).
 
-If no name is provided, `level-test` uses a random name:
+No database name is needed since `level-test` generates unique random names. For disk-based systems it uses [`tempy`](https://github.com/sindresorhus/tempy#readme) and in the browser it uses [`uuid/v4`](https://github.com/kelektiv/node-uuid#version-4).
 
 ```js
 const level = require('level-test')()
@@ -34,15 +34,15 @@ In either environment use of [`memdown`](https://github.com/level/memdown) can b
 
 ```js
 const level = require('level-test')({ mem: true })
-const db = level('foo', { valueEncoding: 'json' })
+const db = level({ valueEncoding: 'json' })
 ```
 
-Or use [any `abstract-leveldown` compliant store](https://github.com/Level/awesome#stores)! In this case `level-test` assumes the storage is on disk and will thus create a temporary directory and clean it (see [`options.clean`](#ctor)).
+Or use [any `abstract-leveldown` compliant store](https://github.com/Level/awesome#stores)! In this case `level-test` assumes the storage is on disk and will thus create a unique temporary directory.
 
 ```js
 const rocksdb = require('rocksdb')
 const level = require('level-test')(rocksdb)
-const db = level('foo', { valueEncoding: 'json' })
+const db = level({ valueEncoding: 'json' })
 ```
 
 ## API
@@ -63,14 +63,16 @@ const db2 = require('level-test')()({ valueEncoding: 'json' })
 ```
 
 <a name="ctor"></a>
-### `db = ctor([name][, options][, callback])`
+### `db = ctor([options][, callback])`
 
-Returns a [`levelup` instance](https://github.com/Level/levelup#api) via [`level-packager`](https://github.com/level/packager) which wraps the underlying store with [`encoding-down`](https://github.com/level/encoding-down). In short: the db is functionally equivalent to [`level`](https://github.com/level/level). You get deferred open, encodings, Promise support, readable streams and more! Options:
+Returns a [`levelup` instance](https://github.com/Level/levelup#api) via [`level-packager`](https://github.com/level/packager) which wraps the underlying store with [`encoding-down`](https://github.com/level/encoding-down). In short: the db is functionally equivalent to [`level`](https://github.com/level/level). You get deferred open, encodings, Promise support, readable streams and more!
 
-- `clean`: nuke directory beforehand (synchronously), default true. In the browser this option clears the IndexedDB object store, of if a custom store was provided, calls `store.destroy(location, callback)` if implemented.
+Options:
+
+- `clean`: (default true). In the browser this option clears the IndexedDB object store, of if a custom store was provided, calls `store.destroy(location, callback)` if implemented. For disk-based stores, this is a noop.
 - Other options are passed to [`levelup`](https://github.com/level/levelup) (which in turn passes them on to the store when opened) as well as [`encoding-down`](https://github.com/level/encoding-down).
 
-Please refer to [`levelup` documentation](https://github.com/Level/levelup#levelupdb-options-callback) for usage of the optional `callback`.
+Please refer to the [`levelup` documentation](https://github.com/Level/levelup#levelupdb-options-callback) for usage of the optional `callback`.
 
 ## Contributing
 

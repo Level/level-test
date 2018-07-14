@@ -2,13 +2,14 @@
 
 var leveljs = require('level-js')
 var wrap = require('./wrap')
+var uuid = require('uuid/v4')
 
 function getDown () {
   return leveljs
 }
 
-function getLocation (name) {
-  return name
+function getLocation () {
+  return uuid()
 }
 
 function clean (location, down) {
