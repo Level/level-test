@@ -7,6 +7,7 @@
 ![Node version](https://img.shields.io/node/v/level-test.svg)
 [![Build Status](https://secure.travis-ci.org/Level/level-test.svg)](http://travis-ci.org/Level/level-test)
 [![dependencies](https://david-dm.org/Level/level-test.svg)](https://david-dm.org/level/level-test)
+[![Coverage Status](https://coveralls.io/repos/github/Level/level-test/badge.svg)](https://coveralls.io/github/Level/level-test)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 **If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md).
