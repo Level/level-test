@@ -4,3 +4,4 @@ level-test/
 .tern-port
 npm-debug.log
 .DS_Store
+.nyc_output/
