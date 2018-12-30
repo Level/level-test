@@ -8,7 +8,7 @@
     "url": "git://github.com/Level/level-test.git"
   },
   "dependencies": {
-    "level-js": "~3.0.0",
+    "level-js": "~4.0.0",
     "level-packager": "~4.0.0",
     "memdown": "~3.0.0",
     "tempy": "^0.2.1",
