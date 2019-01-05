@@ -1,12 +1,15 @@
 {
   "name": "level-test",
-  "description": "get a clean levelup instance for testing.",
   "version": "5.0.0",
-  "homepage": "https://github.com/Level/level-test",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/Level/level-test.git"
+  "description": "get a clean levelup instance for testing.",
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT",
+  "scripts": {
+    "test": "standard && nyc node test/node.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "test-browser-local": "airtap --local test/browser.js"
   },
+  "browser": "browser.js",
   "dependencies": {
     "level-js": "~4.0.0",
     "level-packager": "~5.0.0",
@@ -14,9 +17,6 @@
     "tempy": "^0.2.1",
     "uuid": "^3.3.2",
     "xtend": "~4.0.0"
-  },
-  "optionalDependencies": {
-    "leveldown": "~4.0.0"
   },
   "devDependencies": {
     "abstract-leveldown": "^6.0.0",
@@ -27,14 +27,14 @@
     "standard": "^12.0.0",
     "tape": "^4.8.0"
   },
-  "scripts": {
-    "test": "standard && nyc node test/node.js",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "test-browser-local": "airtap --local test/browser.js"
+  "optionalDependencies": {
+    "leveldown": "~4.0.0"
   },
-  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
-  "license": "MIT",
-  "browser": "browser.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Level/level-test.git"
+  },
+  "homepage": "https://github.com/Level/level-test",
   "engines": {
     "node": ">=6"
   }
