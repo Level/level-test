@@ -1,12 +1,16 @@
 {
   "name": "level-test",
-  "description": "get a clean levelup instance for testing.",
   "version": "5.0.0",
-  "homepage": "https://github.com/Level/level-test",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/Level/level-test.git"
+  "description": "get a clean levelup instance for testing.",
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT",
+  "scripts": {
+    "test": "standard && hallmark && nyc node test/node.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "test-browser-local": "airtap --local test/browser.js",
+    "hallmark": "hallmark --fix"
   },
+  "browser": "browser.js",
   "dependencies": {
     "level-js": "~4.0.0",
     "level-packager": "~5.0.0",
@@ -15,26 +19,34 @@
     "uuid": "^3.3.2",
     "xtend": "~4.0.0"
   },
-  "optionalDependencies": {
-    "leveldown": "~4.0.0"
-  },
   "devDependencies": {
     "abstract-leveldown": "^6.0.0",
     "airtap": "^2.0.0",
     "coveralls": "^3.0.2",
+    "hallmark": "^0.1.0",
     "jsondown": "~1.0.0",
+    "level-community": "^3.0.0",
     "nyc": "^12.0.2",
     "standard": "^12.0.0",
     "tape": "^4.8.0"
   },
-  "scripts": {
-    "test": "standard && nyc node test/node.js",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "test-browser-local": "airtap --local test/browser.js"
+  "optionalDependencies": {
+    "leveldown": "~4.0.0"
   },
-  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
-  "license": "MIT",
-  "browser": "browser.js",
+  "hallmark": {
+    "community": "level-community",
+    "ignore": [
+      "README.md"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Level/level-test.git"
+  },
+  "homepage": "https://github.com/Level/level-test",
+  "keywords": [
+    "level"
+  ],
   "engines": {
     "node": ">=6"
   }
