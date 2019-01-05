@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [Unreleased][unreleased]
 
 ## [5.0.0] - 2018-07-14
 
@@ -286,7 +286,7 @@
 
 :seedling: Initial release.
 
-[Unreleased]: https://github.com/level/level-test/compare/v5.0.0...HEAD
+[unreleased]: https://github.com/level/level-test/compare/v5.0.0...HEAD
 
 [5.0.0]: https://github.com/level/level-test/compare/v4.0.0...v5.0.0
 
