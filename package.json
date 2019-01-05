@@ -32,6 +32,12 @@
   "optionalDependencies": {
     "leveldown": "~4.0.0"
   },
+  "hallmark": {
+    "community": "level-community",
+    "ignore": [
+      "README.md"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/Level/level-test.git"
