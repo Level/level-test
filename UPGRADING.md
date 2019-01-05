@@ -8,14 +8,14 @@ We updated `level-js` to `v3.0.0` with changes to browser support, which warrant
 
 For more information please see:
 
-* [`level-js/UPGRADING.md`](https://github.com/Level/level-js/blob/master/UPGRADING.md)
-* [`level-js/CHANGELOG.md`](https://github.com/Level/level-js/blob/master/CHANGELOG.md)
+- [`level-js/UPGRADING.md`](https://github.com/Level/level-js/blob/master/UPGRADING.md)
+- [`level-js/CHANGELOG.md`](https://github.com/Level/level-js/blob/master/CHANGELOG.md)
 
 ## v3
 
 Dropped support for node 0.10.
 
---------------------
+* * *
 
 If you are using `level-test` with a custom backend, this API has changed.
 
@@ -35,11 +35,11 @@ var level = require('level-test')(hyper)
 var db = level('foo', { encoding: 'json' })
 ```
 
---------------------
+* * *
 
 This contains upgrade to `leveldown@~3.0.0` which is based on `abstract-leveldown@~4.0.0` which in turn contains breaking changes to [`.batch()`](https://github.com/Level/abstract-leveldown/commit/a2621ad70571f6ade9d2be42632ece042e068805).
 
---------------------
+* * *
 
 Internally this package now depends on `level-packager@2` which in turn is based on `levelup@2` which gives us native Promise support.
 
@@ -54,6 +54,6 @@ This does not affect the existing callback API, functionality-wise or performanc
 
 For more information please check the corresponding `CHANGELOG.md` for:
 
-* [`levelup`](https://github.com/Level/levelup/blob/master/CHANGELOG.md)
-* [`leveldown`](https://github.com/Level/leveldown/blob/master/CHANGELOG.md)
-* [`level-packager`](https://github.com/Level/level-packager/blob/master/CHANGELOG.md)
+- [`levelup`](https://github.com/Level/levelup/blob/master/CHANGELOG.md)
+- [`leveldown`](https://github.com/Level/leveldown/blob/master/CHANGELOG.md)
+- [`level-packager`](https://github.com/Level/level-packager/blob/master/CHANGELOG.md)
