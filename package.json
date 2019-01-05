@@ -35,6 +35,9 @@
     "url": "git://github.com/Level/level-test.git"
   },
   "homepage": "https://github.com/Level/level-test",
+  "keywords": [
+    "level"
+  ],
   "engines": {
     "node": ">=6"
   }
