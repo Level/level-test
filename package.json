@@ -8,7 +8,9 @@
     "test": "standard && hallmark && nyc node test/node.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test-browser-local": "airtap --local test/browser.js",
-    "hallmark": "hallmark --fix"
+    "hallmark": "hallmark --fix",
+    "dependency-check": "dependency-check . browser.js test/*.js",
+    "prepublishOnly": "npm run dependency-check"
   },
   "browser": "browser.js",
   "dependencies": {
@@ -23,6 +25,7 @@
     "abstract-leveldown": "^6.0.0",
     "airtap": "^2.0.0",
     "coveralls": "^3.0.2",
+    "dependency-check": "^3.3.0",
     "hallmark": "^0.1.0",
     "jsondown": "~1.0.0",
     "level-community": "^3.0.0",
