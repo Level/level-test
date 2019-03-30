@@ -1,6 +1,6 @@
 # level-test
 
-> Inject different level implementations (browser, leveldb, etc) into your tests.
+> Inject temporary and isolated level stores ([`leveldown`][leveldown], [`level-js`][level-js], [`memdown`][memdown] or custom) into your tests.
 
 [![level badge][level-badge]](https://github.com/Level/awesome)
 [![npm](https://img.shields.io/npm/v/level-test.svg?label=&logo=npm)](https://www.npmjs.com/package/level-test)
@@ -23,7 +23,7 @@ const level = require('level-test')()
 const db = level({ valueEncoding: 'json' })
 ```
 
-In node it defaults to [`leveldown`](https://github.com/Level/leveldown) for storage, using a unique temporary directory. If `leveldown` fails to load it falls back to [`memdown`](https://github.com/Level/memdown) which is an in-memory store. In the browser it defaults to [`level-js`](https://github.com/Level/level.js).
+In node it defaults to [`leveldown`][leveldown] for storage, using a unique temporary directory. If `leveldown` fails to load it falls back to [`memdown`][memdown] which is an in-memory store. In the browser it defaults to [`level-js`][level-js].
 
 No database name is needed since `level-test` generates unique random names. For disk-based systems it uses [`tempy`](https://github.com/sindresorhus/tempy#readme) and in the browser it uses [`uuid/v4`](https://github.com/kelektiv/node-uuid#version-4).
 
@@ -32,7 +32,7 @@ const level = require('level-test')()
 const db = level()
 ```
 
-In either environment use of [`memdown`](https://github.com/Level/memdown) can be forced with `options.mem`:
+In either environment use of [`memdown`][memdown] can be forced with `options.mem`:
 
 ```js
 const level = require('level-test')({ mem: true })
@@ -101,3 +101,6 @@ To sustain [`Level`](https://github.com/Level) and its activities, become a back
 [MIT](LICENSE.md) © 2013-present Dominic Tarr and [Contributors](CONTRIBUTORS.md).
 
 [level-badge]: http://leveldb.org/img/badge.svg
+[leveldown]: https://github.com/Level/leveldown
+[memdown]: https://github.com/Level/memdown
+[level-js]: https://github.com/Level/level-js

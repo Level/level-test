@@ -1,18 +1,37 @@
 # Changelog
 
+_**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
+
 ## [Unreleased][unreleased]
+
+## [6.0.0] - 2019-03-30
+
+### Changed
+
+- Upgrade `memdown` from `~3.0.0` to `~4.0.0` ([`372f8c5`](https://github.com/Level/level-test/commit/372f8c5)) ([**@vweevers**](https://github.com/vweevers))
+- Upgrade `leveldown` from `~4.0.0` to `~5.0.0` ([#108](https://github.com/Level/level-test/issues/108)) ([**@vweevers**](https://github.com/vweevers))
+- Upgrade `level-packager` from `~4.0.0` to `~5.0.0` ([#100](https://github.com/Level/level-test/issues/100)) ([**@vweevers**](https://github.com/vweevers))
+- Upgrade `level-js` from `~3.0.0` to `~4.0.0` ([#103](https://github.com/Level/level-test/issues/103)) ([**@vweevers**](https://github.com/vweevers))
+- Apply common project tweaks ([#105](https://github.com/Level/level-test/issues/105), [#106](https://github.com/Level/level-test/issues/106)) ([**@vweevers**](https://github.com/vweevers))
+- Upgrade `standard` devDependency from `^11.0.0` to `^12.0.0` ([#98](https://github.com/Level/level-test/issues/98)) ([**@vweevers**](https://github.com/vweevers))
+- Upgrade `airtap` devDependency from `0.1.0` to `^2.0.0` ([#102](https://github.com/Level/level-test/issues/102)) ([**@vweevers**](https://github.com/vweevers))
+- Update `abstract-leveldown` devDependency from `^5.0.0` to `^6.0.0` ([#99](https://github.com/Level/level-test/issues/99)) ([**@ralphtheninja**](https://github.com/ralphtheninja))
+
+### Added
+
+- Add `nyc` and `coveralls` ([#97](https://github.com/Level/level-test/issues/97), [#107](https://github.com/Level/level-test/issues/107)) ([**@ralphtheninja**](https://github.com/ralphtheninja), [**@vweevers**](https://github.com/vweevers))
 
 ## [5.0.0] - 2018-07-14
 
 ### Changed
 
 - Upgrade `airtap` devDependency from `0.0.8` to `0.1.0` ([**@vweevers**](https://github.com/vweevers))
-- Use `tempy` and `uuid` to generate random names ([**@ralphtheninja**](https://github.com/ralphtheninja))
+- Use `tempy` and `uuid` to generate random names ([#94](https://github.com/Level/level-test/issues/94)) ([**@ralphtheninja**](https://github.com/ralphtheninja))
 
 ### Removed
 
 - Remove node 9 from Travis ([**@ralphtheninja**](https://github.com/ralphtheninja))
-- Remove `name` parameter from constructor ([**@ralphtheninja**](https://github.com/ralphtheninja))
+- Remove `name` parameter from constructor ([#94](https://github.com/Level/level-test/issues/94)) ([**@ralphtheninja**](https://github.com/ralphtheninja))
 
 ## [4.0.0] - 2018-07-02
 
@@ -286,7 +305,9 @@
 
 :seedling: Initial release.
 
-[unreleased]: https://github.com/level/level-test/compare/v5.0.0...HEAD
+[unreleased]: https://github.com/level/level-test/compare/v6.0.0...HEAD
+
+[6.0.0]: https://github.com/level/level-test/compare/v5.0.0...v6.0.0
 
 [5.0.0]: https://github.com/level/level-test/compare/v4.0.0...v5.0.0
 
