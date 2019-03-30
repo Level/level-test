@@ -25,7 +25,7 @@ module.exports = function (getDown, getLocation, clean) {
       opts = xtend(defaults, opts)
 
       if (defaults.mem) {
-        var location = ''
+        var location = null
       } else {
         location = getLocation()
         if (opts.clean !== false) clean(location, down)
