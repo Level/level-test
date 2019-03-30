@@ -34,7 +34,7 @@
     "tape": "^4.8.0"
   },
   "optionalDependencies": {
-    "leveldown": "~4.0.0"
+    "leveldown": "~5.0.0"
   },
   "hallmark": {
     "community": "level-community",
