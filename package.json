@@ -1,7 +1,7 @@
 {
   "name": "level-test",
   "version": "5.0.0",
-  "description": "get a clean levelup instance for testing.",
+  "description": "Inject temporary and isolated level stores (leveldown, level-js, memdown or custom) into your tests.",
   "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
   "license": "MIT",
   "scripts": {
