@@ -17,7 +17,7 @@
     "level-js": "~4.0.0",
     "level-packager": "~5.0.0",
     "memdown": "~4.0.0",
-    "tempy": "^0.2.1",
+    "tempy": "^0.3.0",
     "uuid": "^3.3.2",
     "xtend": "~4.0.0"
   },
