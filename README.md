@@ -100,7 +100,7 @@ To sustain [`Level`](https://github.com/Level) and its activities, become a back
 
 [MIT](LICENSE.md) © 2013-present Dominic Tarr and [Contributors](CONTRIBUTORS.md).
 
-[level-badge]: http://leveldb.org/img/badge.svg
+[level-badge]: https://leveljs.org/img/badge.svg
 [leveldown]: https://github.com/Level/leveldown
 [memdown]: https://github.com/Level/memdown
 [level-js]: https://github.com/Level/level-js
