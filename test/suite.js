@@ -20,35 +20,6 @@ function down (db, type) {
   return type ? null : db
 }
 
-exports.clean = function (level) {
-  test('clean', function (t) {
-    t.plan(5)
-
-    var db = level({ clean: true })
-
-    db.get('foo', function (err) {
-      t.ok(err)
-
-      db.put('foo', 'bar', function (err) {
-        t.error(err)
-
-        db.get('foo', function (err) {
-          t.notOk(err)
-
-          db.close(function (err) {
-            t.error(err)
-
-            var db2 = level({ clean: true })
-            db2.get('foo', function (err) {
-              t.ok(err)
-            })
-          })
-        })
-      })
-    })
-  })
-}
-
 exports.args = function (level, expectedDown) {
   test('without arguments', function (t) {
     t.plan(3)
@@ -122,6 +93,33 @@ exports.args = function (level, expectedDown) {
         db.get('key', function (err, value) {
           t.ifError(err)
           t.is(value, 'value')
+        })
+      })
+    })
+  })
+}
+
+exports.customLayers = function (level, expectedDown, expectedUp, rawValue) {
+  test('custom layers with auto-open', function (t) {
+    t.plan(9)
+
+    var ret = level(function (err, db) {
+      t.ifError(err)
+      t.is(db, ret, 'got db')
+      t.ok(down(db) instanceof expectedDown, 'got expected down')
+      t.ok(db instanceof expectedUp, 'got expected up')
+
+      db.put('key', 'value', function (err) {
+        t.notOk(err)
+
+        db.get('key', { asBuffer: false }, function (err, value) {
+          t.ifError(err)
+          t.is(value, 'value')
+        })
+
+        db.get('key', { valueEncoding: 'id', asBuffer: false }, function (err, value) {
+          t.ifError(err)
+          t.is(value, rawValue)
         })
       })
     })

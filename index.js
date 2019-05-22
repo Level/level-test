@@ -1,23 +1,28 @@
 'use strict'
 
+var compose = require('level-compose')
+var leveldown = require('leveldown')
 var memdown = require('memdown')
-var tempy = require('tempy')
-var wrap = require('./wrap')
+var encode = require('encoding-down')
+var levelup = require('levelup')
+var getLocation = require('./location')
 
-function getDown (defaults) {
-  try {
-    return require('leveldown')
-  } catch (err) {
-    console.error('could not require leveldown, fallback to memdown')
-    defaults.mem = true
-    return memdown
+module.exports = function factory (down, defaults) {
+  if (typeof down !== 'function') {
+    defaults = down
+    down = null
   }
+
+  defaults = defaults || {}
+  down = down || (defaults.mem ? memdown : leveldown)
+
+  // The layers option is experimental and undocumented. Use at your own risk.
+  var layers = defaults.layers || [encode, levelup]
+  var shell = compose([locationFallback, down, layers], defaults)
+
+  return shell
 }
 
-function getLocation () {
-  return tempy.directory()
+function locationFallback (location, options) {
+  return location || (options.mem ? null : getLocation())
 }
-
-function clean () {}
-
-module.exports = wrap(getDown, getLocation, clean)

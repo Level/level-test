@@ -23,7 +23,7 @@ const level = require('level-test')()
 const db = level({ valueEncoding: 'json' })
 ```
 
-In node it defaults to [`leveldown`][leveldown] for storage, using a unique temporary directory. If `leveldown` fails to load it falls back to [`memdown`][memdown] which is an in-memory store. In the browser it defaults to [`level-js`][level-js].
+In node it defaults to [`leveldown`][leveldown] for storage, using a unique temporary directory. In the browser it defaults to [`level-js`][level-js].
 
 No database name is needed since `level-test` generates unique random names. For disk-based systems it uses [`tempy`](https://github.com/sindresorhus/tempy#readme) and in the browser it uses [`uuid/v4`](https://github.com/kelektiv/node-uuid#version-4).
 
@@ -39,7 +39,7 @@ const level = require('level-test')({ mem: true })
 const db = level({ valueEncoding: 'json' })
 ```
 
-Or use [any `abstract-leveldown` compliant store](https://github.com/Level/awesome#stores)! In this case `level-test` assumes the storage is on disk and will thus create a unique temporary directory.
+Or use [any `abstract-leveldown` compliant store](https://github.com/Level/awesome#stores)! In this case `level-test` assumes the storage is on disk and will thus create a unique temporary directory, unless you pass `mem: true`.
 
 ```js
 const rocksdb = require('rocksdb')
@@ -54,7 +54,7 @@ const db = level({ valueEncoding: 'json' })
 
 Returns a function `ctor` that creates preconfigured [`levelup`](https://github.com/Level/levelup) instances with temporary storage. The `store` if provided must be a function and [`abstract-leveldown`](https://github.com/Level/abstract-leveldown) compliant. Options:
 
-- `mem`: use `memdown` as `store`, default false. True implies `clean: false`.
+- `mem`: use `memdown` as `store` (or assume that `store` _is_ `memdown`), default false.
 - Any other option will be merged into `ctor` options, the latter taking precedence.
 
 These are equal:
@@ -69,10 +69,7 @@ const db2 = require('level-test')()({ valueEncoding: 'json' })
 
 Returns a [`levelup` instance](https://github.com/Level/levelup#api) via [`level-packager`](https://github.com/Level/packager) which wraps the underlying store with [`encoding-down`](https://github.com/Level/encoding-down). In short: the db is functionally equivalent to [`level`](https://github.com/Level/level). You get deferred open, encodings, Promise support, readable streams and more!
 
-Options:
-
-- `clean`: (default true). In the browser this option clears the IndexedDB object store, of if a custom store was provided, calls `store.destroy(location, callback)` if implemented. For disk-based stores, this is a noop.
-- Other options are passed to [`levelup`](https://github.com/Level/levelup) (which in turn passes them on to the store when opened) as well as [`encoding-down`](https://github.com/Level/encoding-down).
+Options are passed to [`levelup`](https://github.com/Level/levelup) (which in turn passes them on to the store when opened) as well as [`encoding-down`](https://github.com/Level/encoding-down).
 
 Please refer to the [`levelup` documentation](https://github.com/Level/levelup#levelupdb-options-callback) for usage of the optional `callback`.
 
