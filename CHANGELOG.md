@@ -4,6 +4,31 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 
 ## [Unreleased][unreleased]
 
+## [7.0.0] - 2019-05-25
+
+### Changed
+
+- Internals: replace `level-packager` with `level-compose` ([#116](https://github.com/Level/level-test/issues/116)) ([**@vweevers**](https://github.com/vweevers))
+- Upgrade `tempy` from `^0.2.1` to `^0.3.0` ([`7817af0`](https://github.com/Level/level-test/commit/7817af0)) ([**@vweevers**](https://github.com/vweevers))
+- Upgrade `leveldown` from `~5.0.0` to `~5.1.0` ([#112](https://github.com/Level/level-test/issues/112)) ([**@vweevers**](https://github.com/vweevers))
+- Upgrade `nyc` devDependency from `^13.2.0` to `^14.0.0` ([#110](https://github.com/Level/level-test/issues/110)) ([**@vweevers**](https://github.com/vweevers))
+
+### Added
+
+- Experimental: support overriding the layers (`encoding-down` and `levelup`) ([#116](https://github.com/Level/level-test/issues/116)) ([**@vweevers**](https://github.com/vweevers))
+- Experimental: support passing in a `location` ([#116](https://github.com/Level/level-test/issues/116)) ([**@vweevers**](https://github.com/vweevers))
+- Add node `current` to travis ([`24233d4`](https://github.com/Level/level-test/commit/24233d4)) ([**@vweevers**](https://github.com/vweevers))
+
+### Removed
+
+- Drop node 6 ([`c76b4d7`](https://github.com/Level/level-test/commit/c76b4d7)) ([**@vweevers**](https://github.com/vweevers))
+- Remove defunct `clean` option ([#116](https://github.com/Level/level-test/issues/116)) ([**@vweevers**](https://github.com/vweevers))
+- Remove `memdown` fallback in Node.js ([#116](https://github.com/Level/level-test/issues/116)) ([**@vweevers**](https://github.com/vweevers))
+
+### Fixed
+
+- Fix Level badge and website ([`f54f6a4`](https://github.com/Level/level-test/commit/f54f6a4), [`612943f`](https://github.com/Level/level-test/commit/612943f)) ([**@vweevers**](https://github.com/vweevers))
+
 ## [6.0.0] - 2019-03-30
 
 ### Changed
@@ -305,7 +330,9 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 
 :seedling: Initial release.
 
-[unreleased]: https://github.com/level/level-test/compare/v6.0.0...HEAD
+[unreleased]: https://github.com/level/level-test/compare/v7.0.0...HEAD
+
+[7.0.0]: https://github.com/level/level-test/compare/v6.0.0...v7.0.0
 
 [6.0.0]: https://github.com/level/level-test/compare/v5.0.0...v6.0.0
 

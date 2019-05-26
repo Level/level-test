@@ -2,6 +2,10 @@
 
 This document describes breaking changes and how to upgrade. For a complete list of changes including minor and patch releases, please refer to the [changelog](CHANGELOG.md).
 
+## v7
+
+Dropped node 6 and removed the defunct `clean` option.
+
 ## v6
 
 Upgraded to `leveldown@5`, `level-js@4` and `memdown@4`, now all based on `abstract-leveldown@6`. For more information please see:
