@@ -17,7 +17,7 @@
     "./location.js": "./location-browser.js"
   },
   "dependencies": {
-    "encoding-down": "~6.0.2",
+    "encoding-down": "~6.1.0",
     "level-compose": "^0.0.2",
     "level-js": "~4.0.0",
     "levelup": "~4.0.1",
