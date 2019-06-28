@@ -20,7 +20,7 @@
     "encoding-down": "~6.1.0",
     "level-compose": "^0.0.2",
     "level-js": "~4.0.0",
-    "levelup": "~4.0.1",
+    "levelup": "~4.1.0",
     "memdown": "~4.1.0",
     "tempy": "^0.3.0",
     "uuid": "^3.3.2"
