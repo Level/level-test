@@ -4,6 +4,16 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 
 ## [Unreleased][unreleased]
 
+## [7.1.0] - 2019-06-28
+
+### Changed
+
+- Upgrade `levelup` from `~4.0.1` to `~4.1.0` ([#121](https://github.com/Level/level-test/issues/121)) ([**@vweevers**](https://github.com/vweevers))
+- Upgrade `memdown` from `~4.0.0` to `~4.1.0` ([#120](https://github.com/Level/level-test/issues/120)) ([**@vweevers**](https://github.com/vweevers))
+- Upgrade `encoding-down` from `~6.0.2` to `~6.1.0` ([#119](https://github.com/Level/level-test/issues/119)) ([**@vweevers**](https://github.com/vweevers))
+
+**Historical Note** These upgrades enable the use of `iterator.seek()` across the board.
+
 ## [7.0.0] - 2019-05-26
 
 ### Changed
@@ -330,7 +340,9 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 
 :seedling: Initial release.
 
-[unreleased]: https://github.com/level/level-test/compare/v7.0.0...HEAD
+[unreleased]: https://github.com/level/level-test/compare/v7.1.0...HEAD
+
+[7.1.0]: https://github.com/level/level-test/compare/v7.0.0...v7.1.0
 
 [7.0.0]: https://github.com/level/level-test/compare/v6.0.0...v7.0.0
 
