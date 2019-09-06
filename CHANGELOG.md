@@ -2,8 +2,6 @@
 
 _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 
-## [Unreleased][unreleased]
-
 ## [7.1.0] - 2019-06-28
 
 ### Changed
@@ -339,8 +337,6 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 ## 1.0.0 - 2013-05-28
 
 :seedling: Initial release.
-
-[unreleased]: https://github.com/level/level-test/compare/v7.1.0...HEAD
 
 [7.1.0]: https://github.com/level/level-test/compare/v7.0.0...v7.1.0
 
