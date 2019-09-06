@@ -2,8 +2,6 @@
 
 _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 
-## [Unreleased][unreleased]
-
 ## [7.1.0] - 2019-06-28
 
 ### Changed
@@ -340,66 +338,64 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 
 :seedling: Initial release.
 
-[unreleased]: https://github.com/level/level-test/compare/v7.1.0...HEAD
+[7.1.0]: https://github.com/Level/level-test/compare/v7.0.0...v7.1.0
 
-[7.1.0]: https://github.com/level/level-test/compare/v7.0.0...v7.1.0
+[7.0.0]: https://github.com/Level/level-test/compare/v6.0.0...v7.0.0
 
-[7.0.0]: https://github.com/level/level-test/compare/v6.0.0...v7.0.0
+[6.0.0]: https://github.com/Level/level-test/compare/v5.0.0...v6.0.0
 
-[6.0.0]: https://github.com/level/level-test/compare/v5.0.0...v6.0.0
+[5.0.0]: https://github.com/Level/level-test/compare/v4.0.0...v5.0.0
 
-[5.0.0]: https://github.com/level/level-test/compare/v4.0.0...v5.0.0
+[4.0.0]: https://github.com/Level/level-test/compare/v3.0.0...v4.0.0
 
-[4.0.0]: https://github.com/level/level-test/compare/v3.0.0...v4.0.0
+[3.0.0]: https://github.com/Level/level-test/compare/v2.0.3...v3.0.0
 
-[3.0.0]: https://github.com/level/level-test/compare/v2.0.3...v3.0.0
+[2.0.3]: https://github.com/Level/level-test/compare/v2.0.2...v2.0.3
 
-[2.0.3]: https://github.com/level/level-test/compare/v2.0.2...v2.0.3
+[2.0.2]: https://github.com/Level/level-test/compare/v2.0.1...v2.0.2
 
-[2.0.2]: https://github.com/level/level-test/compare/v2.0.1...v2.0.2
+[2.0.1]: https://github.com/Level/level-test/compare/v2.0.0...v2.0.1
 
-[2.0.1]: https://github.com/level/level-test/compare/v2.0.0...v2.0.1
+[2.0.0]: https://github.com/Level/level-test/compare/v1.7.0...v2.0.0
 
-[2.0.0]: https://github.com/level/level-test/compare/v1.7.0...v2.0.0
+[1.7.0]: https://github.com/Level/level-test/compare/v1.6.6...v1.7.0
 
-[1.7.0]: https://github.com/level/level-test/compare/v1.6.6...v1.7.0
+[1.6.6]: https://github.com/Level/level-test/compare/v1.6.5...v1.6.6
 
-[1.6.6]: https://github.com/level/level-test/compare/v1.6.5...v1.6.6
+[1.6.5]: https://github.com/Level/level-test/compare/v1.6.4...v1.6.5
 
-[1.6.5]: https://github.com/level/level-test/compare/v1.6.4...v1.6.5
+[1.6.4]: https://github.com/Level/level-test/compare/v1.6.3...v1.6.4
 
-[1.6.4]: https://github.com/level/level-test/compare/v1.6.3...v1.6.4
+[1.6.3]: https://github.com/Level/level-test/compare/v1.6.2...v1.6.3
 
-[1.6.3]: https://github.com/level/level-test/compare/v1.6.2...v1.6.3
+[1.6.2]: https://github.com/Level/level-test/compare/v1.6.1...v1.6.2
 
-[1.6.2]: https://github.com/level/level-test/compare/v1.6.1...v1.6.2
+[1.6.1]: https://github.com/Level/level-test/compare/v1.6.0...v1.6.1
 
-[1.6.1]: https://github.com/level/level-test/compare/v1.6.0...v1.6.1
+[1.6.0]: https://github.com/Level/level-test/compare/v1.5.2...v1.6.0
 
-[1.6.0]: https://github.com/level/level-test/compare/v1.5.2...v1.6.0
+[1.5.2]: https://github.com/Level/level-test/compare/v1.5.1...v1.5.2
 
-[1.5.2]: https://github.com/level/level-test/compare/v1.5.1...v1.5.2
+[1.5.1]: https://github.com/Level/level-test/compare/v1.5.0...v1.5.1
 
-[1.5.1]: https://github.com/level/level-test/compare/v1.5.0...v1.5.1
+[1.5.0]: https://github.com/Level/level-test/compare/v1.4.2...v1.5.0
 
-[1.5.0]: https://github.com/level/level-test/compare/v1.4.2...v1.5.0
+[1.4.2]: https://github.com/Level/level-test/compare/v1.4.1...v1.4.2
 
-[1.4.2]: https://github.com/level/level-test/compare/v1.4.1...v1.4.2
+[1.4.1]: https://github.com/Level/level-test/compare/v1.4.0...v1.4.1
 
-[1.4.1]: https://github.com/level/level-test/compare/v1.4.0...v1.4.1
+[1.4.0]: https://github.com/Level/level-test/compare/v1.3.0...v1.4.0
 
-[1.4.0]: https://github.com/level/level-test/compare/v1.3.0...v1.4.0
+[1.3.0]: https://github.com/Level/level-test/compare/v1.2.2...v1.3.0
 
-[1.3.0]: https://github.com/level/level-test/compare/v1.2.2...v1.3.0
+[1.2.2]: https://github.com/Level/level-test/compare/v1.2.1...v1.2.2
 
-[1.2.2]: https://github.com/level/level-test/compare/v1.2.1...v1.2.2
+[1.2.1]: https://github.com/Level/level-test/compare/v1.2.0...v1.2.1
 
-[1.2.1]: https://github.com/level/level-test/compare/v1.2.0...v1.2.1
+[1.2.0]: https://github.com/Level/level-test/compare/v1.1.1...v1.2.0
 
-[1.2.0]: https://github.com/level/level-test/compare/v1.1.1...v1.2.0
+[1.1.1]: https://github.com/Level/level-test/compare/v1.1.0...v1.1.1
 
-[1.1.1]: https://github.com/level/level-test/compare/v1.1.0...v1.1.1
+[1.1.0]: https://github.com/Level/level-test/compare/v1.0.1...v1.1.0
 
-[1.1.0]: https://github.com/level/level-test/compare/v1.0.1...v1.1.0
-
-[1.0.1]: https://github.com/level/level-test/compare/v1.0.0...v1.0.1
+[1.0.1]: https://github.com/Level/level-test/compare/v1.0.0...v1.0.1
