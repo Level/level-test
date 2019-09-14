@@ -5,7 +5,7 @@
   "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
   "license": "MIT",
   "scripts": {
-    "test": "standard && hallmark && nyc node test/node.js",
+    "test": "standard && hallmark && (nyc -s node test/node.js | faucet) && nyc report",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test-browser-local": "airtap --local test/browser.js",
     "hallmark": "hallmark --fix",
@@ -30,6 +30,7 @@
     "airtap": "^2.0.0",
     "coveralls": "^3.0.2",
     "dependency-check": "^3.3.0",
+    "faucet": "^0.0.1",
     "hallmark": "^2.0.0",
     "jsondown": "^1.0.0",
     "level-community": "^3.0.0",
