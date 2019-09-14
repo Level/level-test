@@ -34,6 +34,7 @@
     "jsondown": "^1.0.0",
     "level-community": "^3.0.0",
     "nyc": "^14.0.0",
+    "reachdown": "^1.0.0",
     "standard": "^14.0.0",
     "tape": "^4.8.0"
   },

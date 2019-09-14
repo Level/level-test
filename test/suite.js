@@ -1,19 +1,7 @@
 'use strict'
 
 var test = require('tape')
-
-function isLooseAbstract (db) {
-  if (!db || typeof db !== 'object') { return false }
-  return typeof db._batch === 'function' && typeof db._iterator === 'function'
-}
-
-function down (db, type) {
-  if (typeof db.down === 'function') return db.down(type)
-  if (type && db.type === type) return db
-  if (isLooseAbstract(db.db)) return down(db.db, type)
-  if (isLooseAbstract(db._db)) return down(db._db, type)
-  return type ? null : db
-}
+var reachdown = require('reachdown')
 
 exports.args = function (level, expectedDown) {
   test('without arguments', function (t) {
@@ -22,7 +10,7 @@ exports.args = function (level, expectedDown) {
     var db = level()
 
     db.on('open', function () {
-      t.ok(down(db) instanceof expectedDown, 'got expected down')
+      t.ok(reachdown(db) instanceof expectedDown, 'got expected down')
     })
 
     db.put('foo', 'bar', function (err) {
@@ -37,7 +25,7 @@ exports.args = function (level, expectedDown) {
     level({ valueEncoding: 'json' }, function (err, db) {
       t.ifError(err)
       t.ok(db.isOpen())
-      t.ok(down(db) instanceof expectedDown, 'got expected down')
+      t.ok(reachdown(db) instanceof expectedDown, 'got expected down')
 
       var key = '' + Math.random()
       var value = { test_key: '' + new Date() }
@@ -61,7 +49,7 @@ exports.args = function (level, expectedDown) {
     var value = { test_key: '' + new Date() }
 
     db.on('open', function () {
-      t.ok(down(db) instanceof expectedDown, 'got expected down')
+      t.ok(reachdown(db) instanceof expectedDown, 'got expected down')
     })
 
     db.put(key, value, function (err) {
@@ -80,7 +68,7 @@ exports.args = function (level, expectedDown) {
     level(function (err, db) {
       t.ifError(err)
       t.ok(db.isOpen())
-      t.ok(down(db) instanceof expectedDown, 'got expected down')
+      t.ok(reachdown(db) instanceof expectedDown, 'got expected down')
 
       db.put('key', 'value', function (err) {
         t.notOk(err)
@@ -101,7 +89,7 @@ exports.customLayers = function (level, expectedDown, expectedUp, rawValue) {
     var ret = level(function (err, db) {
       t.ifError(err)
       t.is(db, ret, 'got db')
-      t.ok(down(db) instanceof expectedDown, 'got expected down')
+      t.ok(reachdown(db) instanceof expectedDown, 'got expected down')
       t.ok(db instanceof expectedUp, 'got expected up')
 
       db.put('key', 'value', function (err) {
