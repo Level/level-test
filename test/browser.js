@@ -23,3 +23,17 @@ suite.customLayers(levelTest(memdown, { layers: [levelup], mem: true }), memdown
 suite.customLayers(levelTest(memdown, { layers: [encode, { valueEncoding: 'json' }] }), memdown, encode, '"value"')
 
 suite.options(levelTest)
+
+// Test parity with level(-mem)
+suite.level(levelTest(), {
+  skipErrorIfExistsTest: true,
+  skipRepairTest: true,
+  skipDestroyTest: true
+})
+
+suite.level(levelTest({ mem: true }), {
+  nonPersistent: true,
+  skipErrorIfExistsTest: true,
+  skipRepairTest: true,
+  skipDestroyTest: true
+})

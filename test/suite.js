@@ -2,6 +2,7 @@
 
 var test = require('tape')
 var reachdown = require('reachdown')
+var packagerTests = require('level-packager/abstract/test')
 
 exports.args = function (level, expectedDown) {
   test('without arguments', function (t) {
@@ -136,4 +137,8 @@ exports.options = function (levelTest) {
       })
     })
   })
+}
+
+exports.level = function (level, options) {
+  packagerTests(test, level, options)
 }
