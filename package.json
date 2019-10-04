@@ -17,11 +17,11 @@
     "./location.js": "./location-browser.js"
   },
   "dependencies": {
-    "encoding-down": "~6.2.0",
+    "encoding-down": "^6.2.0",
     "level-compose": "^0.0.2",
-    "level-js": "~4.0.0",
-    "levelup": "~4.3.0",
-    "memdown": "~5.0.0",
+    "level-js": "^4.0.1",
+    "levelup": "^4.3.1",
+    "memdown": "^5.1.0",
     "tempy": "^0.3.0",
     "uuid": "^3.3.2"
   },
@@ -41,7 +41,7 @@
     "tape": "^4.8.0"
   },
   "optionalDependencies": {
-    "leveldown": "~5.2.0"
+    "leveldown": "^5.2.1"
   },
   "hallmark": {
     "community": "level-community",
