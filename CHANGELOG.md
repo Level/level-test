@@ -2,6 +2,21 @@
 
 _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 
+## [8.0.0] - 2019-10-20
+
+### Changed
+
+- **Breaking:** upgrade `level-js` from `^4.0.1` to `^5.0.0` ([#135](https://github.com/Level/level-test/issues/135)) ([**@vweevers**](https://github.com/vweevers))
+- **Breaking:** upgrade `memdown` from `~4.1.0` to `^5.1.0` ([#126](https://github.com/Level/level-test/issues/126), [`6fe16c6`](https://github.com/Level/level-test/commit/6fe16c6)) ([**@vweevers**](https://github.com/vweevers))
+- Unlock dependencies ([`6fe16c6`](https://github.com/Level/level-test/commit/6fe16c6)) ([**@vweevers**](https://github.com/vweevers)) (supersedes [#130](https://github.com/Level/level-test/issues/130), [#131](https://github.com/Level/level-test/issues/131), [#132](https://github.com/Level/level-test/issues/132) and [#133](https://github.com/Level/level-test/issues/133))
+- Upgrade `hallmark` devDependency from `^0.1.0` to `^2.0.0` ([#123](https://github.com/Level/level-test/issues/123), [#129](https://github.com/Level/level-test/issues/129)) ([**@vweevers**](https://github.com/vweevers))
+- Upgrade `standard` devDependency from `^12.0.0` to `^14.0.0` ([#122](https://github.com/Level/level-test/issues/122), [#128](https://github.com/Level/level-test/issues/128)) ([**@vweevers**](https://github.com/vweevers))
+- Use `reachdown` package in tests ([Level/community#82](https://github.com/Level/community/issues/82)) ([`8350402`](https://github.com/Level/level-test/commit/8350402)) ([**@vweevers**](https://github.com/vweevers)) (supersedes [`121e4b3`](https://github.com/Level/level-test/commit/121e4b3))
+
+### Added
+
+- Add `level-packager` tests ([`8314fc3`](https://github.com/Level/level-test/commit/8314fc3)) ([**@vweevers**](https://github.com/vweevers))
+
 ## [7.1.0] - 2019-06-28
 
 ### Changed
@@ -337,6 +352,8 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 ## 1.0.0 - 2013-05-28
 
 :seedling: Initial release.
+
+[8.0.0]: https://github.com/Level/level-test/compare/v7.1.0...v8.0.0
 
 [7.1.0]: https://github.com/Level/level-test/compare/v7.0.0...v7.1.0
 

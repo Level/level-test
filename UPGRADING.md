@@ -2,11 +2,17 @@
 
 This document describes breaking changes and how to upgrade. For a complete list of changes including minor and patch releases, please refer to the [changelog](CHANGELOG.md).
 
-## v7
+## 8.0.0
+
+Upgraded to `level-js@5` and `memdown@5` which have the same breaking change:
+
+> Support of keys & values other than strings and Buffers has been dropped. Internally \[`memdown` and `level-js`] now store keys & values as binary which solves a number of compatibility issues ([Level/memdown#186](https://github.com/Level/memdown/issues/186)). If you pass in a key or value that isn't a string or Buffer, it will be irreversibly stringified.
+
+## 7.0.0
 
 Dropped node 6 and removed the defunct `clean` option.
 
-## v6
+## 6.0.0
 
 Upgraded to `leveldown@5`, `level-js@4` and `memdown@4`, now all based on `abstract-leveldown@6`. For more information please see:
 
@@ -17,7 +23,7 @@ Upgraded to `leveldown@5`, `level-js@4` and `memdown@4`, now all based on `abstr
 
 Please note that `leveldown` (which is an optional dependency) now requires node >= 8.6.0.
 
-## v5
+## 5.0.0
 
 Dropped node 9 and removed `name` parameter from constructor in favor of randomly generated unique names. If you previously did:
 
@@ -33,7 +39,7 @@ const level = require('level-test')()
 const db = level({ valueEncoding: 'json' })
 ```
 
-## v4
+## 4.0.0
 
 We updated `level-js` to `v3.0.0` with changes to browser support, which warranted a new major version.
 
@@ -42,7 +48,7 @@ For more information please see:
 - [`level-js/UPGRADING.md`](https://github.com/Level/level-js/blob/master/UPGRADING.md)
 - [`level-js/CHANGELOG.md`](https://github.com/Level/level-js/blob/master/CHANGELOG.md)
 
-## v3
+## 3.0.0
 
 Dropped support for node 0.10.
 
