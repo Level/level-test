@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "test": "standard && hallmark && (nyc -s node test/node.js | faucet) && nyc report",
-    "coverage": "nyc report --reporter=text-lcov",
+    "coverage": "nyc report -r lcovonly",
     "test-browser-local": "airtap --local test/browser.js",
     "hallmark": "hallmark --fix",
     "dependency-check": "dependency-check . browser.js test/*.js",
