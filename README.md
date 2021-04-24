@@ -6,7 +6,7 @@
 [![npm](https://img.shields.io/npm/v/level-test.svg?label=&logo=npm)](https://www.npmjs.com/package/level-test)
 [![Node version](https://img.shields.io/node/v/level-test.svg)](https://www.npmjs.com/package/level-test)
 [![Test](https://github.com/Level/level-test/actions/workflows/test.yml/badge.svg)](https://github.com/Level/level-test/actions/workflows/test.yml)
-[![codecov](https://codecov.io/gh/Level/level-js/branch/master/graph/badge.svg)](https://codecov.io/gh/Level/level-test)
+[![codecov](https://codecov.io/gh/Level/level-test/branch/master/graph/badge.svg)](https://codecov.io/gh/Level/level-test)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Backers on Open Collective](https://opencollective.com/level/backers/badge.svg?color=orange)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/level/sponsors/badge.svg?color=orange)](#sponsors)
