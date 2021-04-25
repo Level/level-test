@@ -2,6 +2,29 @@
 
 This document describes breaking changes and how to upgrade. For a complete list of changes including minor and patch releases, please refer to the [changelog](CHANGELOG.md).
 
+## 9.0.0
+
+Legacy range options have been removed ([Level/community#86](https://github.com/Level/community/issues/86)). If you previously did:
+
+```js
+db.createReadStream({ start: 'a', end: 'z' })
+```
+
+An error would now be thrown and you must instead do:
+
+```js
+db.createReadStream({ gte: 'a', lte: 'z' })
+```
+
+The same applies to `db.iterator()`, `db.createKeyStream()` and `db.createValueStream()`.
+
+This release also drops support of legacy runtime environments ([Level/community#98](https://github.com/Level/community/issues/98)):
+
+- Node.js 8
+- Internet Explorer 11
+- Safari 9-11
+- Stock Android browser (AOSP).
+
 ## 8.0.0
 
 Upgraded to `level-js@5` and `memdown@5` which have the same breaking change:

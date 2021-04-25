@@ -1,6 +1,6 @@
 {
   "name": "level-test",
-  "version": "8.0.0",
+  "version": "9.0.0",
   "description": "Inject temporary and isolated level stores (leveldown, level-js, memdown or custom) into your tests.",
   "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
   "license": "MIT",

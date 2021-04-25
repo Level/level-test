@@ -1,6 +1,14 @@
 # Changelog
 
+## [9.0.0] - 2021-04-25
+
 _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
+
+### Changed
+
+- **Breaking:** drop node 8 ([Level/community#98](https://github.com/Level/community/issues/98)) ([`fefe5b3`](https://github.com/Level/level-test/commit/fefe5b3)) (Vincent Weevers)
+- **Breaking:** bump dependencies ([`8e8a642`](https://github.com/Level/level-test/commit/8e8a642)) (Vincent Weevers)
+- **Breaking:** modernize syntax ([Level/community#98](https://github.com/Level/community/issues/98)) ([`012d3a9`](https://github.com/Level/level-test/commit/012d3a9)) (Vincent Weevers)
 
 ## [8.0.0] - 2019-10-20
 
@@ -349,9 +357,11 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 
 - Remove `tap` dependency ([**@dominictarr**](https://github.com/dominictarr))
 
-## 1.0.0 - 2013-05-28
+## [1.0.0] - 2013-05-28
 
 :seedling: Initial release.
+
+[9.0.0]: https://github.com/Level/level-test/compare/v8.0.0...v9.0.0
 
 [8.0.0]: https://github.com/Level/level-test/compare/v7.1.0...v8.0.0
 
@@ -416,3 +426,5 @@ _**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md)._
 [1.1.0]: https://github.com/Level/level-test/compare/v1.0.1...v1.1.0
 
 [1.0.1]: https://github.com/Level/level-test/compare/v1.0.0...v1.0.1
+
+[1.0.0]: https://github.com/Level/level-test/releases/tag/v1.0.0

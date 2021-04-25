@@ -95,6 +95,9 @@ Support us with a monthly donation on [Open Collective](https://opencollective.c
 [MIT](LICENSE)
 
 [level-badge]: https://leveljs.org/img/badge.svg
+
 [leveldown]: https://github.com/Level/leveldown
+
 [memdown]: https://github.com/Level/memdown
+
 [level-js]: https://github.com/Level/level-js
