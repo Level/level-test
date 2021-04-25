@@ -1,11 +1,11 @@
 'use strict'
 
-var compose = require('level-compose')
-var leveldown = require('leveldown')
-var memdown = require('memdown')
-var encode = require('encoding-down')
-var levelup = require('levelup')
-var getLocation = require('./location')
+const compose = require('level-compose')
+const leveldown = require('leveldown')
+const memdown = require('memdown')
+const encode = require('encoding-down')
+const levelup = require('levelup')
+const getLocation = require('./location')
 
 module.exports = function factory (down, defaults) {
   if (typeof down !== 'function') {
@@ -17,8 +17,8 @@ module.exports = function factory (down, defaults) {
   down = down || (defaults.mem ? memdown : leveldown)
 
   // The layers option is experimental and undocumented. Use at your own risk.
-  var layers = defaults.layers || [encode, levelup]
-  var shell = compose([locationFallback, down, layers], defaults)
+  const layers = defaults.layers || [encode, levelup]
+  const shell = compose([locationFallback, down, layers], defaults)
 
   return shell
 }

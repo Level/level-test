@@ -1,14 +1,14 @@
 'use strict'
 
-var test = require('tape')
-var reachdown = require('reachdown')
-var packagerTests = require('level-packager/abstract/test')
+const test = require('tape')
+const reachdown = require('reachdown')
+const packagerTests = require('level-packager/abstract/test')
 
 exports.args = function (level, expectedDown) {
   test('without arguments', function (t) {
     t.plan(3)
 
-    var db = level()
+    const db = level()
 
     db.on('open', function () {
       t.ok(reachdown(db) instanceof expectedDown, 'got expected down')
@@ -28,8 +28,8 @@ exports.args = function (level, expectedDown) {
       t.ok(db.isOpen())
       t.ok(reachdown(db) instanceof expectedDown, 'got expected down')
 
-      var key = '' + Math.random()
-      var value = { test_key: '' + new Date() }
+      const key = '' + Math.random()
+      const value = { test_key: '' + new Date() }
 
       db.put(key, value, function (err) {
         t.notOk(err)
@@ -45,9 +45,9 @@ exports.args = function (level, expectedDown) {
   test('with options', function (t) {
     t.plan(4)
 
-    var db = level({ valueEncoding: 'json' })
-    var key = '' + Math.random()
-    var value = { test_key: '' + new Date() }
+    const db = level({ valueEncoding: 'json' })
+    const key = '' + Math.random()
+    const value = { test_key: '' + new Date() }
 
     db.on('open', function () {
       t.ok(reachdown(db) instanceof expectedDown, 'got expected down')
@@ -87,7 +87,7 @@ exports.customLayers = function (level, expectedDown, expectedUp, rawValue) {
   test('custom layers with auto-open', function (t) {
     t.plan(9)
 
-    var ret = level(function (err, db) {
+    const ret = level(function (err, db) {
       t.ifError(err)
       t.is(db, ret, 'got db')
       t.ok(reachdown(db) instanceof expectedDown, 'got expected down')
@@ -114,10 +114,10 @@ exports.options = function (levelTest) {
   test('opts precedence', function (t) {
     t.plan(6)
 
-    var level = levelTest({ valueEncoding: 'utf8' })
-    var db1 = level()
-    var db2 = level({ valueEncoding: 'json' })
-    var value = { test: true }
+    const level = levelTest({ valueEncoding: 'utf8' })
+    const db1 = level()
+    const db2 = level({ valueEncoding: 'json' })
+    const value = { test: true }
 
     db1.put('key', value, function (err) {
       t.ifError(err)

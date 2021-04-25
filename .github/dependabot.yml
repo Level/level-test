@@ -6,7 +6,3 @@ updates:
       interval: monthly
     ignore:
       - dependency-name: dependency-check
-      - dependency-name: uuid
-      - dependency-name: tempy
-      - dependency-name: airtap
-      - dependency-name: standard

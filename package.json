@@ -7,7 +7,7 @@
   "scripts": {
     "test": "standard && hallmark && (nyc -s node test/node.js | faucet) && nyc report",
     "coverage": "nyc report -r lcovonly",
-    "test-browser-local": "airtap --local test/browser.js",
+    "test-browsers-local": "airtap test/browser.js",
     "hallmark": "hallmark --fix",
     "dependency-check": "dependency-check . browser.js test/*.js",
     "prepublishOnly": "npm run dependency-check"
@@ -22,12 +22,13 @@
     "level-js": "^5.0.0",
     "levelup": "^4.3.1",
     "memdown": "^5.1.0",
-    "tempy": "^0.3.0",
+    "tempy": "^1.0.1",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
     "abstract-leveldown": "^6.0.0",
-    "airtap": "^3.0.0",
+    "airtap": "^4.0.3",
+    "airtap-playwright": "^1.0.1",
     "dependency-check": "^3.3.0",
     "faucet": "^0.0.1",
     "hallmark": "^3.1.0",
@@ -36,7 +37,7 @@
     "level-packager": "^5.0.3",
     "nyc": "^15.0.0",
     "reachdown": "^1.0.0",
-    "standard": "^14.0.0",
+    "standard": "^16.0.3",
     "tape": "^5.0.1"
   },
   "optionalDependencies": {

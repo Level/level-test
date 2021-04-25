@@ -1,12 +1,12 @@
 'use strict'
 
-var leveldown = require('leveldown')
-var memdown = require('memdown')
-var jsondown = require('jsondown')
-var encode = require('encoding-down')
-var levelup = require('levelup')
-var levelTest = require('../')
-var suite = require('./suite')
+const leveldown = require('leveldown')
+const memdown = require('memdown')
+const jsondown = require('jsondown')
+const encode = require('encoding-down')
+const levelup = require('levelup')
+const levelTest = require('../')
+const suite = require('./suite')
 
 suite.args(levelTest(), leveldown)
 suite.args(levelTest({ mem: true }), memdown)
