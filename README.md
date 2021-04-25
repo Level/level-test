@@ -8,8 +8,7 @@
 [![Test](https://github.com/Level/level-test/actions/workflows/test.yml/badge.svg)](https://github.com/Level/level-test/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/Level/level-test/branch/master/graph/badge.svg)](https://codecov.io/gh/Level/level-test)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Backers on Open Collective](https://opencollective.com/level/backers/badge.svg?color=orange)](#backers)
-[![Sponsors on Open Collective](https://opencollective.com/level/sponsors/badge.svg?color=orange)](#sponsors)
+[![Funding](https://opencollective.com/level/tiers/badge.svg?color=orange)](#donate)
 
 **If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md).
 
@@ -49,7 +48,6 @@ const db = level({ valueEncoding: 'json' })
 
 ## API
 
-<a name="factory"></a>
 ### `ctor = levelTest([store][, options])`
 
 Returns a function `ctor` that creates preconfigured [`levelup`](https://github.com/Level/levelup) instances with temporary storage. The `store` if provided must be a function and [`abstract-leveldown`](https://github.com/Level/abstract-leveldown) compliant. Options:
@@ -64,7 +62,6 @@ const db1 = require('level-test')({ valueEncoding: 'json' })()
 const db2 = require('level-test')()({ valueEncoding: 'json' })
 ```
 
-<a name="ctor"></a>
 ### `db = ctor([options][, callback])`
 
 Returns a [`levelup` instance](https://github.com/Level/levelup#api) via [`level-packager`](https://github.com/Level/packager) which wraps the underlying store with [`encoding-down`](https://github.com/Level/encoding-down). In short: the db is functionally equivalent to [`level`](https://github.com/Level/level). You get deferred open, encodings, Promise support, readable streams and more!
@@ -83,19 +80,19 @@ See the [Contribution Guide](https://github.com/Level/community/blob/master/CONT
 
 ## Donate
 
-To sustain [`Level`](https://github.com/Level) and its activities, become a backer or sponsor on [Open Collective](https://opencollective.com/level). Your logo or avatar will be displayed on our 28+ [GitHub repositories](https://github.com/Level) and [npm](https://www.npmjs.com/) packages. 💖
+Support us with a monthly donation on [Open Collective](https://opencollective.com/level) and help us continue our work. Your logo or avatar will be displayed on our 28+ [GitHub repositories](https://github.com/Level) and [npm](https://www.npmjs.com/) packages. 💖
 
-### Backers
+**Active financial contributors**
 
-[![Open Collective backers](https://opencollective.com/level/backers.svg?width=890)](https://opencollective.com/level)
+[![Open Collective backers](https://opencollective.com/level/tiers/backer.svg?button=false)](https://opencollective.com/level) [![Open Collective sponsors](https://opencollective.com/level/tiers/sponsor.svg?button=false)](https://opencollective.com/level)
 
-### Sponsors
+**Past financial contributors**
 
-[![Open Collective sponsors](https://opencollective.com/level/sponsors.svg?width=890)](https://opencollective.com/level)
+[![Open Collective sponsors](https://opencollective.com/level/sponsors.svg?button=false&avatarHeight=36)](https://opencollective.com/level) [![Open Collective backers](https://opencollective.com/level/backers.svg?button=false&avatarHeight=36)](https://opencollective.com/level)
 
 ## License
 
-[MIT](LICENSE.md) © 2013-present Dominic Tarr and [Contributors](CONTRIBUTORS.md).
+[MIT](LICENSE)
 
 [level-badge]: https://leveljs.org/img/badge.svg
 [leveldown]: https://github.com/Level/leveldown

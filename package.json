@@ -12,6 +12,13 @@
     "dependency-check": "dependency-check . browser.js test/*.js",
     "prepublishOnly": "npm run dependency-check"
   },
+  "files": [
+    "index.js",
+    "location-browser.js",
+    "location.js",
+    "CHANGELOG.md",
+    "UPGRADING.md"
+  ],
   "browser": {
     "leveldown": "level-js",
     "./location.js": "./location-browser.js"
@@ -33,7 +40,6 @@
     "faucet": "^0.0.1",
     "hallmark": "^3.1.0",
     "jsondown": "^1.0.0",
-    "level-community": "^3.0.0",
     "level-packager": "^6.0.0",
     "nyc": "^15.0.0",
     "reachdown": "^1.0.0",
@@ -42,12 +48,6 @@
   },
   "optionalDependencies": {
     "leveldown": "^6.0.0"
-  },
-  "hallmark": {
-    "community": "level-community",
-    "ignore": [
-      "README.md"
-    ]
   },
   "repository": {
     "type": "git",
