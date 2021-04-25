@@ -58,6 +58,6 @@
     "level"
   ],
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   }
 }
