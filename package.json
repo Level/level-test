@@ -43,7 +43,7 @@
     "level-packager": "^6.0.0",
     "nyc": "^15.0.0",
     "reachdown": "^1.0.0",
-    "standard": "^16.0.3",
+    "standard": "^17.0.0",
     "tape": "^5.0.1"
   },
   "optionalDependencies": {
