@@ -29,7 +29,7 @@
     "level-js": "^6.0.0",
     "levelup": "^5.0.0",
     "memdown": "^6.0.0",
-    "tempy": "^1.0.1",
+    "tempy": "^3.0.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
