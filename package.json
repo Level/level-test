@@ -30,7 +30,7 @@
     "levelup": "^5.0.0",
     "memdown": "^6.0.0",
     "tempy": "^1.0.1",
-    "uuid": "^8.3.2"
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "abstract-leveldown": "^7.0.0",
