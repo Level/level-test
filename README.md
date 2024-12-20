@@ -1,16 +1,6 @@
 # level-test
 
-> Inject temporary and isolated level stores ([`leveldown`][leveldown], [`level-js`][level-js], [`memdown`][memdown] or custom) into your tests.
-
-[![level badge][level-badge]](https://github.com/Level/awesome)
-[![npm](https://img.shields.io/npm/v/level-test.svg?label=&logo=npm)](https://www.npmjs.com/package/level-test)
-[![Node version](https://img.shields.io/node/v/level-test.svg)](https://www.npmjs.com/package/level-test)
-[![Test](https://github.com/Level/level-test/actions/workflows/test.yml/badge.svg)](https://github.com/Level/level-test/actions/workflows/test.yml)
-[![codecov](https://codecov.io/gh/Level/level-test/branch/master/graph/badge.svg)](https://codecov.io/gh/Level/level-test)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Funding](https://opencollective.com/level/tiers/badge.svg?color=orange)](#donate)
-
-**If you are upgrading:** please see [`UPGRADING.md`](UPGRADING.md).
+**Discontinued.**
 
 ## Usage
 
@@ -78,23 +68,9 @@ Please refer to the [`levelup` documentation](https://github.com/Level/levelup#l
 
 See the [Contribution Guide](https://github.com/Level/community/blob/master/CONTRIBUTING.md) for more details.
 
-## Donate
-
-Support us with a monthly donation on [Open Collective](https://opencollective.com/level) and help us continue our work. Your logo or avatar will be displayed on our 28+ [GitHub repositories](https://github.com/Level) and [npm](https://www.npmjs.com/) packages. 💖
-
-**Active financial contributors**
-
-[![Open Collective backers](https://opencollective.com/level/tiers/backer.svg?button=false)](https://opencollective.com/level) [![Open Collective sponsors](https://opencollective.com/level/tiers/sponsor.svg?button=false)](https://opencollective.com/level)
-
-**Past financial contributors**
-
-[![Open Collective sponsors](https://opencollective.com/level/sponsors.svg?button=false&avatarHeight=36)](https://opencollective.com/level) [![Open Collective backers](https://opencollective.com/level/backers.svg?button=false&avatarHeight=36)](https://opencollective.com/level)
-
 ## License
 
 [MIT](LICENSE)
-
-[level-badge]: https://leveljs.org/img/badge.svg
 
 [leveldown]: https://github.com/Level/leveldown
 
